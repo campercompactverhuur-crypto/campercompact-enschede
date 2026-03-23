@@ -175,12 +175,6 @@ button,input{font:inherit}
   padding:54px 0 24px;
 }
 
-.hero-grid{
-  display:grid;
-  grid-template-columns:1.15fr .85fr;
-  gap:28px;
-  align-items:center;
-}
 
 .eyebrow{
   display:inline-block;
@@ -247,27 +241,10 @@ h2{
   border-radius:18px;
   overflow:hidden;
   position:relative;
-  background:
-    linear-gradient(180deg, rgba(6,10,8,.04), rgba(6,10,8,.42)),
-    url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1400&q=80") center/cover no-repeat;
 }
 
-.photo-overlay{
-  position:absolute;
-  inset:auto 0 0 0;
-  padding:24px;
-  background:linear-gradient(180deg, transparent, rgba(6,11,9,.9));
-}
-
-.badge{
-  display:inline-block;
-  margin-bottom:12px;
-  padding:8px 12px;
-  border-radius:999px;
-  background:rgba(119,214,156,.14);
-  color:var(--green);
-  font-size:12px;
-  font-weight:700;
+.photo-large{
+  min-height:620px;
 }
 
 .section{padding:34px 0}
@@ -499,54 +476,50 @@ h2{
     </header>
 
     <main>
-      <section class="hero">
-        <div class="container hero-grid">
-          <div>
-            <span class="eyebrow">Modern · Outdoor · Compact reizen</span>
-            <h1>Bekijk de beschikbaarheid van onze <span>Adria Compact</span></h1>
-            <p class="lead">
-              Bezoekers kunnen hier alleen zien of de camper beschikbaar is. Reserveren gaat altijd persoonlijk via contact met CamperCompact-Enschede.
-            </p>
+<section class="hero">
+  <div class="container">
+    <span class="eyebrow">Modern · Outdoor · Compact reizen</span>
+    <h1>Bekijk de beschikbaarheid van onze <span>Adria Compact</span></h1>
+    <p class="lead">
+      Bezoekers kunnen hier alleen zien of de camper beschikbaar is. Reserveren gaat altijd persoonlijk via contact met CamperCompact-Enschede.
+    </p>
 
-            <div class="hero-actions">
-              <a class="btn" href="#beschikbaarheid">Beschikbaarheid</a>
+    <div class="hero-actions">
+      <a class="btn" href="#beschikbaarheid">Beschikbaarheid</a>
 
-              <a class="btn btn-secondary" href="mailto:campercompact.verhuur@gmail.com?subject=Vraag over camper&body=Hallo,%0A%0AIk heb interesse in de camper voor de volgende periode:%0A%0A- Datum:%0A- Aantal personen:%0A%0AAlvast bedankt!">
-                Stuur e-mail
-              </a>
+      <a class="btn btn-secondary" href="mailto:campercompact.verhuur@gmail.com?subject=Vraag over camper&body=Hallo,%0A%0AIk heb interesse in de camper voor de volgende periode:%0A%0A- Datum:%0A- Aantal personen:%0A%0AAlvast bedankt!">
+        Stuur e-mail
+      </a>
 
-              <a class="btn btn-whatsapp" href="https://wa.me/31613739139?text=Hallo!%20Ik%20heb%20interesse%20in%20de%20camper.%20Kunt%20u%20meer%20informatie%20geven?">
-                WhatsApp
-              </a>
-            </div>
+      <a class="btn btn-whatsapp" href="https://wa.me/31613739139?text=Hallo!%20Ik%20heb%20interesse%20in%20de%20camper.%20Kunt%20u%20meer%20informatie%20geven?">
+        WhatsApp
+      </a>
+    </div>
 
-            <div class="hero-actions">
-              <span class="btn btn-ghost">Contact</span>
+    <div class="hero-actions">
+      <span class="btn btn-ghost">Contact</span>
 
-              <button class="btn btn-secondary" type="button" onclick="toonTelefoonnummer()">
-                Bellen
-              </button>
+      <button class="btn btn-secondary" type="button" onclick="toonTelefoonnummer()">
+        Bellen
+      </button>
 
-              <a id="telefoonnummerLink" class="btn btn-ghost hidden" href="tel:+31613739139">
-                06 13 73 91 39
-              </a>
-            </div>
-          </div>
+      <a id="telefoonnummerLink" class="btn btn-ghost hidden" href="tel:+31613937123">
+        06 13 93 71 23
+      </a>
+    </div>
 
-          <div class="photo-card">
-            <div class="photo" style="background:
-              linear-gradient(180deg, rgba(6,10,8,.10), rgba(6,10,8,.52)),
-              url('front.jpeg') center/cover no-repeat;">
-              <div class="photo-overlay">
-                <div class="badge">Outdoor escape</div>
-                <h3>Adria Compact</h3>
-                <p style="color:var(--muted);margin-bottom:0;">Een nette, moderne camper voor ontspannen roadtrips en compacte vrijheid.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+    <div class="photo-card">
+      <div class="photo photo-large" style="background:url('front.jpeg') center/cover no-repeat;"></div>
+    </div>
 
+    <div style="margin-top:18px;">
+      <h3>Adria Compact</h3>
+      <p class="lead">
+        Een nette, moderne camper voor ontspannen roadtrips en compacte vrijheid.
+      </p>
+    </div>
+  </div>
+</section>
       <section class="section">
         <div class="container">
           <button class="gallery-toggle" onclick="toggleGallery()">
