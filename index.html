@@ -438,7 +438,32 @@
           </div>
         </div>
       </section>
+<section class="section">
+  <div class="container">
+    <span class="eyebrow">Over de camper</span>
+    <h2>Adria Compact</h2>
+    <p class="lead">
+      Onze Adria Compact is een moderne en comfortabele camper, ideaal voor een ontspannen roadtrip vanuit Enschede.
+    </p>
 
+    <div class="cards">
+      <article class="info-card">
+        <h3>Praktisch</h3>
+        <p>Compact model, makkelijk te rijden en geschikt voor een comfortabele reis.</p>
+      </article>
+
+      <article class="info-card">
+        <h3>Inventaris</h3>
+        <p>Keukenspullen, servies, stoelen, tafel en basisinventaris aanwezig.</p>
+      </article>
+
+      <article class="info-card">
+        <h3>Extra's</h3>
+        <p>Luifel, opbergruimte en overige voorzieningen.</p>
+      </article>
+    </div>
+  </div>
+</section>
       <section class="section" id="beschikbaarheid">
         <div class="container">
           <div class="section-head">
@@ -448,9 +473,8 @@
               <p>Klik door de maanden heen om te zien wanneer de camper beschikbaar is.</p>
             </div>
             <div class="legend">
-              <span><i class="dot available"></i>Beschikbaar</span>
-              <span><i class="dot unavailable"></i>Niet beschikbaar</span>
-              <span><i class="dot unknown"></i>Niet ingesteld</span>
+<span><i class="dot available"></i>Beschikbaar</span>
+<span><i class="dot unavailable"></i>Gereserveerd</span>
             </div>
           </div>
 
@@ -603,15 +627,14 @@
     }
 
     function statusLabel(status){
-      if(status === "available") return "Beschikbaar";
-      if(status === "unavailable") return "Niet beschikbaar";
-      return "Niet ingesteld";
+  if(status === "unavailable") return "Gereserveerd";
+  return "Beschikbaar";
     }
 
     function makeDay(day, status, clickable, onClick){
       const el = document.createElement(clickable ? "button" : "div");
       if(clickable) el.type = "button";
-      el.className = "day " + (status || "unknown");
+      el.className = "day " + (status === "unavailable" ? "unavailable" : "available");
 
       const num = document.createElement("div");
       num.className = "day-num";
@@ -650,9 +673,8 @@
         const status = data[key];
         const cell = makeDay(day, status, clickable, () => {
           const latest = getData();
-          if(latest[key] === "available") latest[key] = "unavailable";
-          else if(latest[key] === "unavailable") delete latest[key];
-          else latest[key] = "available";
+          if(latest[key] === "unavailable") delete latest[key];
+else latest[key] = "unavailable";
           setData(latest);
           renderAll();
         });
