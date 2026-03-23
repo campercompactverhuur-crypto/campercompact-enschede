@@ -478,18 +478,28 @@
       .section-head,.nav{align-items:stretch;flex-direction:column}
       .photo{min-height:360px}
     }
+@media (max-width:640px){
+  .weekdays,.calendar-grid{gap:7px}
+  .day{min-height:80px;padding:10px;border-radius:14px}
+  .day-label{font-size:11px;padding:6px 8px}
+  .floating-whatsapp{
+    width:56px;
+    height:56px;
+    right:16px;
+    bottom:16px;
+    font-size:26px;
+  }
+}
 
-    @media (max-width:640px){
-      .weekdays,.calendar-grid{gap:7px}
-      .day{min-height:80px;padding:10px;border-radius:14px}
-      .day-label{font-size:11px;padding:6px 8px}
-      .floating-whatsapp{
-        width:56px;
-        height:56px;
-        right:16px;
-        bottom:16px;
-        font-size:26px;
-      }
+.dev-banner{
+  background:linear-gradient(135deg,#f4b860,#e39d3c);
+  color:#082114;
+  text-align:center;
+  padding:12px;
+  font-weight:700;
+  font-size:14px;
+  letter-spacing:0.5px;
+}
       .photo-gallery{
         grid-template-columns:1fr 1fr;
       }
@@ -497,6 +507,9 @@
   </style>
 </head>
 <body>
+<div class="dev-banner">
+  🚧 Website nog in ontwikkeling – neem gerust contact op voor beschikbaarheid
+</div>
   <div id="publicView">
     <header class="site-header">
       <div class="container nav">
