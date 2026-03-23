@@ -20,86 +20,90 @@
   --shadow:0 12px 30px rgba(0,0,0,.08);
   --radius:22px;
 }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+
 body{
   margin:0;
   font-family:Arial, Helvetica, sans-serif;
   color:var(--text);
   background:var(--bg);
 }
-    a{text-decoration:none;color:inherit}
-    button,input{font:inherit}
 
-    .container{
-      width:min(1100px, calc(100% - 32px));
-      margin:0 auto;
-    }
+a{text-decoration:none;color:inherit}
+button,input{font:inherit}
 
-    .hidden{display:none !important}
+.container{
+  width:min(1100px, calc(100% - 32px));
+  margin:0 auto;
+}
 
-    .site-header{
-      position:sticky;
-      top:0;
-      z-index:20;
-      background:rgba(8,12,10,.72);
-      backdrop-filter:blur(12px);
-      border-bottom:1px solid var(--line);
-    }
+.hidden{display:none !important}
 
-    .nav{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:16px;
-      padding:14px 0;
-    }
+.site-header{
+  position:sticky;
+  top:0;
+  z-index:20;
+  background:rgba(8,12,10,.72);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
 
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:12px;
-    }
+.nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:16px;
+  padding:14px 0;
+}
 
-    .brand-mark{
-      width:46px;
-      height:46px;
-      border-radius:14px;
-      display:grid;
-      place-items:center;
-      font-weight:700;
-      color:#082114;
-      background:linear-gradient(135deg,var(--green),var(--green2));
-      box-shadow:var(--shadow);
-    }
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
 
-    .brand-title{font-weight:700}
-    .brand-sub{font-size:13px;color:var(--muted)}
+.brand-mark{
+  width:46px;
+  height:46px;
+  border-radius:14px;
+  display:grid;
+  place-items:center;
+  font-weight:700;
+  color:#082114;
+  background:linear-gradient(135deg,var(--green),var(--green2));
+  box-shadow:var(--shadow);
+}
 
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding:12px 18px;
-      border-radius:14px;
-      border:1px solid transparent;
-      font-weight:700;
-      cursor:pointer;
-      background:linear-gradient(135deg,var(--green),var(--green2));
-      color:#082114;
-    }
+.brand-title{font-weight:700}
+.brand-sub{font-size:13px;color:var(--muted)}
 
-    .btn-secondary{
-      background:rgba(255,255,255,.06);
-      border-color:var(--line);
-      color:var(--text);
-    }
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:12px 18px;
+  border-radius:14px;
+  border:1px solid transparent;
+  font-weight:700;
+  cursor:pointer;
+  background:linear-gradient(135deg,var(--green),var(--green2));
+  color:#082114;
+}
+
+.btn-secondary{
+  background:rgba(255,255,255,.06);
+  border-color:var(--line);
+  color:var(--text);
+}
 
 .btn-ghost{
   background:transparent;
   border-color:var(--line);
   color:var(--text);
 }
+
 .btn-whatsapp{
   background:#25D366;
   color:white;
@@ -140,7 +144,6 @@ body{
     font-size:26px;
   }
 }
-/* HIER PLAKKEN 👇 */
 
 .gallery-toggle{
   margin-bottom:20px;
@@ -168,131 +171,123 @@ body{
   display:block;
 }
 
-.hidden{
-  display:none !important;
-}
-/* HIER PLAKKEN 👇 */
-
-.btn-whatsapp{
-  background:#25D366;
-  color:white;
+.hero{
+  padding:54px 0 24px;
 }
 
-.btn-whatsapp:hover{
-  filter:brightness(1.05);    }
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  gap:28px;
+  align-items:center;
+}
 
-    .hero{
-      padding:54px 0 24px;
-    }
+.eyebrow{
+  display:inline-block;
+  margin-bottom:12px;
+  color:var(--green);
+  font-size:12px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  font-weight:700;
+}
 
-    .hero-grid{
-      display:grid;
-      grid-template-columns:1.15fr .85fr;
-      gap:28px;
-      align-items:center;
-    }
+h1,h2,h3,p{margin-top:0}
 
-    .eyebrow{
-      display:inline-block;
-      margin-bottom:12px;
-      color:var(--green);
-      font-size:12px;
-      letter-spacing:.12em;
-      text-transform:uppercase;
-      font-weight:700;
-    }
+h1{
+  font-size:clamp(38px, 6vw, 64px);
+  line-height:.98;
+  letter-spacing:-.04em;
+  margin-bottom:16px;
+}
 
-    h1,h2,h3,p{margin-top:0}
-    h1{
-      font-size:clamp(38px, 6vw, 64px);
-      line-height:.98;
-      letter-spacing:-.04em;
-      margin-bottom:16px;
-    }
+h1 span{color:var(--green)}
 
-    h1 span{color:var(--green)}
-    h2{
-      font-size:clamp(28px,4vw,42px);
-      letter-spacing:-.04em;
-      margin-bottom:8px;
-    }
+h2{
+  font-size:clamp(28px,4vw,42px);
+  letter-spacing:-.04em;
+  margin-bottom:8px;
+}
 
-    .lead{
-      font-size:18px;
-      line-height:1.65;
-      color:var(--muted);
-      max-width:640px;
-    }
+.lead{
+  font-size:18px;
+  line-height:1.65;
+  color:var(--muted);
+  max-width:640px;
+}
 
-    .hero-actions,.chips,.legend,.toolbar{
-      display:flex;
-      gap:12px;
-      flex-wrap:wrap;
-    }
+.hero-actions,.chips,.legend,.toolbar{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
 
-    .hero-actions{margin:24px 0 20px}
+.hero-actions{margin:24px 0 20px}
 
-    .chips span{
-      padding:10px 14px;
-      border:1px solid var(--line);
-      border-radius:999px;
-      background:rgba(255,255,255,.05);
-      color:#dbe7e0;
-      font-size:14px;
-    }
+.chips span{
+  padding:10px 14px;
+  border:1px solid var(--line);
+  border-radius:999px;
+  background:rgba(255,255,255,.05);
+  color:#dbe7e0;
+  font-size:14px;
+}
 
-    .photo-card,.calendar-shell,.info-card,.contact-box,.login-card{
-      border-radius:var(--radius);
-      border:1px solid var(--line);
-      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
-      box-shadow:var(--shadow);
-    }
+.photo-card,.calendar-shell,.info-card,.contact-box,.login-card{
+  border-radius:var(--radius);
+  border:1px solid var(--line);
+  background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+  box-shadow:var(--shadow);
+}
 
-    .photo-card{padding:16px}
-    .photo{
-      min-height:430px;
-      border-radius:18px;
-      overflow:hidden;
-      position:relative;
-      background:
-        linear-gradient(180deg, rgba(6,10,8,.04), rgba(6,10,8,.42)),
-        url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1400&q=80") center/cover no-repeat;
-    }
+.photo-card{padding:16px}
 
-    .photo-overlay{
-      position:absolute;
-      inset:auto 0 0 0;
-      padding:24px;
-      background:linear-gradient(180deg, transparent, rgba(6,11,9,.9));
-    }
+.photo{
+  min-height:430px;
+  border-radius:18px;
+  overflow:hidden;
+  position:relative;
+  background:
+    linear-gradient(180deg, rgba(6,10,8,.04), rgba(6,10,8,.42)),
+    url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1400&q=80") center/cover no-repeat;
+}
 
-    .badge{
-      display:inline-block;
-      margin-bottom:12px;
-      padding:8px 12px;
-      border-radius:999px;
-      background:rgba(119,214,156,.14);
-      color:var(--green);
-      font-size:12px;
-      font-weight:700;
-    }
+.photo-overlay{
+  position:absolute;
+  inset:auto 0 0 0;
+  padding:24px;
+  background:linear-gradient(180deg, transparent, rgba(6,11,9,.9));
+}
 
-    .section{padding:34px 0}
-    .section-muted{
-      border-top:1px solid var(--line);
-      border-bottom:1px solid var(--line);
-      background:rgba(255,255,255,.03);
-    }
+.badge{
+  display:inline-block;
+  margin-bottom:12px;
+  padding:8px 12px;
+  border-radius:999px;
+  background:rgba(119,214,156,.14);
+  color:var(--green);
+  font-size:12px;
+  font-weight:700;
+}
 
-    .section-head{
-      display:flex;
-      justify-content:space-between;
-      align-items:end;
-      gap:18px;
-      margin-bottom:18px;
-    }
+.section{padding:34px 0}
 
-    .section-head p{color:var(--muted)}
+.section-muted{
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  background:rgba(255,255,255,.03);
+}
+
+.section-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  gap:18px;
+  margin-bottom:18px;
+}
+
+.section-head p{color:var(--muted)}
+
 .availability-intro{
   color:var(--muted);
   max-width:760px;
@@ -303,14 +298,16 @@ body{
   margin-bottom:18px;
 }
 
-    .calendar-shell{padding:18px}
-    .calendar-top{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:12px;
-      margin-bottom:16px;
-    }
+.calendar-shell{padding:18px}
+
+.calendar-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  margin-bottom:16px;
+}
+
 .calendar-embed{
   overflow:hidden;
   border-radius:22px;
@@ -318,169 +315,172 @@ body{
   background:rgba(255,255,255,.85);
   box-shadow:var(--shadow);
 }
-    .icon-btn{
-      width:44px;
-      height:44px;
-      border-radius:14px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.06);
-      color:var(--text);
-      cursor:pointer;
-    }
 
-    .weekdays,.calendar-grid{
-      display:grid;
-      grid-template-columns:repeat(7, minmax(0, 1fr));
-      gap:10px;
-    }
+.icon-btn{
+  width:44px;
+  height:44px;
+  border-radius:14px;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.06);
+  color:var(--text);
+  cursor:pointer;
+}
 
-    .weekdays{margin-bottom:10px}
-    .weekday{
-      text-align:center;
-      font-size:13px;
-      color:var(--muted);
-      padding:8px 0;
-    }
+.weekdays,.calendar-grid{
+  display:grid;
+  grid-template-columns:repeat(7, minmax(0, 1fr));
+  gap:10px;
+}
 
-    .day{
-      min-height:92px;
-      border-radius:18px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.04);
-      padding:12px;
-      display:flex;
-      flex-direction:column;
-      justify-content:space-between;
-      gap:12px;
-    }
+.weekdays{margin-bottom:10px}
 
-    .day.empty{
-      background:transparent;
-      border-style:dashed;
-      opacity:.22;
-    }
+.weekday{
+  text-align:center;
+  font-size:13px;
+  color:var(--muted);
+  padding:8px 0;
+}
 
-    .day-num{font-weight:700}
-    .day-label{
-      align-self:flex-start;
-      border-radius:999px;
-      padding:7px 10px;
-      font-size:12px;
-      font-weight:700;
-    }
+.day{
+  min-height:92px;
+  border-radius:18px;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.04);
+  padding:12px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  gap:12px;
+}
 
-    .day.available .day-label{background:rgba(119,214,156,.14);color:#98ecb9}
-    .day.unavailable .day-label{background:rgba(255,133,133,.14);color:#ffaaaa}
-    .day.unknown .day-label{background:rgba(255,255,255,.08);color:#d9e2dd}
+.day.empty{
+  background:transparent;
+  border-style:dashed;
+  opacity:.22;
+}
 
-    .admin .day{
-      cursor:pointer;
-      transition:transform .12s ease, border-color .12s ease;
-    }
+.day-num{font-weight:700}
 
-    .admin .day:hover{
-      transform:translateY(-2px);
-      border-color:rgba(119,214,156,.32);
-    }
+.day-label{
+  align-self:flex-start;
+  border-radius:999px;
+  padding:7px 10px;
+  font-size:12px;
+  font-weight:700;
+}
 
-    .legend span{
-      color:var(--muted);
-      font-size:14px;
-    }
+.day.available .day-label{background:rgba(119,214,156,.14);color:#98ecb9}
+.day.unavailable .day-label{background:rgba(255,133,133,.14);color:#ffaaaa}
+.day.unknown .day-label{background:rgba(255,255,255,.08);color:#d9e2dd}
 
-    .dot{
-      width:11px;
-      height:11px;
-      display:inline-block;
-      border-radius:50%;
-      margin-right:8px;
-      vertical-align:middle;
-    }
+.admin .day{
+  cursor:pointer;
+  transition:transform .12s ease, border-color .12s ease;
+}
 
-    .dot.available{background:var(--green)}
-    .dot.unavailable{background:var(--red)}
-    .dot.unknown{background:var(--unknown)}
+.admin .day:hover{
+  transform:translateY(-2px);
+  border-color:rgba(119,214,156,.32);
+}
 
-    .notice{
-      margin-top:16px;
-      color:var(--muted);
-      line-height:1.6;
-    }
+.legend span{
+  color:var(--muted);
+  font-size:14px;
+}
 
-    .cards{
-      display:grid;
-      grid-template-columns:repeat(3, 1fr);
-      gap:18px;
-    }
+.dot{
+  width:11px;
+  height:11px;
+  display:inline-block;
+  border-radius:50%;
+  margin-right:8px;
+  vertical-align:middle;
+}
 
-    .info-card{padding:24px}
-    .info-card p{color:var(--muted);line-height:1.6}
+.dot.available{background:var(--green)}
+.dot.unavailable{background:var(--red)}
+.dot.unknown{background:var(--unknown)}
 
-    .contact-box{
-      padding:24px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:18px;
-      flex-wrap:wrap;
-    }
+.notice{
+  margin-top:16px;
+  color:var(--muted);
+  line-height:1.6;
+}
 
-    .footer{
-      padding:24px 0 34px;
-      color:var(--muted);
-    }
+.cards{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:18px;
+}
 
-    .footer-row{
-      display:flex;
-      justify-content:space-between;
-      gap:16px;
-      flex-wrap:wrap;
-      align-items:center;
-    }
+.info-card{padding:24px}
+.info-card p{color:var(--muted);line-height:1.6}
 
-    .login-wrap{
-      min-height:100vh;
-      display:grid;
-      place-items:center;
-      padding:28px 16px;
-    }
+.contact-box{
+  padding:24px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:18px;
+  flex-wrap:wrap;
+}
 
-    .login-card{
-      width:min(520px,100%);
-      padding:28px;
-    }
+.footer{
+  padding:24px 0 34px;
+  color:var(--muted);
+}
 
-    .stack{
-      display:grid;
-      gap:12px;
-    }
+.footer-row{
+  display:flex;
+  justify-content:space-between;
+  gap:16px;
+  flex-wrap:wrap;
+  align-items:center;
+}
 
-    .input{
-      width:100%;
-      padding:14px 16px;
-      border-radius:14px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.06);
-      color:var(--text);
-    }
+.login-wrap{
+  min-height:100vh;
+  display:grid;
+  place-items:center;
+  padding:28px 16px;
+}
 
-    .small{
-      font-size:14px;
-      color:var(--muted);
-      line-height:1.6;
-    }
+.login-card{
+  width:min(520px,100%);
+  padding:28px;
+}
 
-    @media (max-width:920px){
-      .hero-grid,.cards{grid-template-columns:1fr}
-      .section-head,.nav{align-items:stretch;flex-direction:column}
-      .photo{min-height:320px}
-    }
+.stack{
+  display:grid;
+  gap:12px;
+}
 
-    @media (max-width:640px){
-      .weekdays,.calendar-grid{gap:7px}
-      .day{min-height:80px;padding:10px;border-radius:14px}
-      .day-label{font-size:11px;padding:6px 8px}
-    }
+.input{
+  width:100%;
+  padding:14px 16px;
+  border-radius:14px;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.06);
+  color:var(--text);
+}
+
+.small{
+  font-size:14px;
+  color:var(--muted);
+  line-height:1.6;
+}
+
+@media (max-width:920px){
+  .hero-grid,.cards{grid-template-columns:1fr}
+  .section-head,.nav{align-items:stretch;flex-direction:column}
+  .photo{min-height:320px}
+}
+
+@media (max-width:640px){
+  .weekdays,.calendar-grid{gap:7px}
+  .day{min-height:80px;padding:10px;border-radius:14px}
+  .day-label{font-size:11px;padding:6px 8px}
+}
   </style>
 </head>
 <body>
@@ -507,27 +507,36 @@ body{
             <p class="lead">
               Bezoekers kunnen hier alleen zien of de camper beschikbaar is. Reserveren gaat altijd persoonlijk via contact met CamperCompact-Enschede.
             </p>
+
             <div class="hero-actions">
-  <a class="btn" href="#beschikbaarheid">Beschikbaarheid</a>
-  <a class="btn btn-secondary" href="mailto:campercompact.verhuur@gmail.com?subject=Aanvraag camper&body=Hallo,%0A%0AIk heb interesse in de camper voor de volgende periode:%0A%0A- Datum:%0A- Aantal personen:%0A%0AAlvast bedankt!">
-    Aanvraag doen
-  </a>
-
-  <a class="btn" href="https://wa.me/31613739139?text=Hallo!%20Ik%20heb%20interesse%20in%20de%20camper.%20Kunt%20u%20meer%20informatie%20geven?">
-    WhatsApp
-  </a>
-
-</div>
-
               <a class="btn" href="#beschikbaarheid">Beschikbaarheid</a>
-              <a class="btn btn-ghost" href="#contact">Contact</a>
+
+              <a class="btn btn-secondary" href="mailto:campercompact.verhuur@gmail.com?subject=Vraag over camper&body=Hallo,%0A%0AIk heb interesse in de camper voor de volgende periode:%0A%0A- Datum:%0A- Aantal personen:%0A%0AAlvast bedankt!">
+                Stuur e-mail
+              </a>
+
+              <a class="btn btn-whatsapp" href="https://wa.me/31613739139?text=Hallo!%20Ik%20heb%20interesse%20in%20de%20camper.%20Kunt%20u%20meer%20informatie%20geven?">
+                WhatsApp
+              </a>
+            </div>
+
+            <div class="hero-actions">
+              <span class="btn btn-ghost">Contact</span>
+
+              <button class="btn btn-secondary" type="button" onclick="toonTelefoonnummer()">
+                Bellen
+              </button>
+
+              <a id="telefoonnummerLink" class="btn btn-ghost hidden" href="tel:+31613739139">
+                06 13 73 91 39
+              </a>
             </div>
           </div>
 
           <div class="photo-card">
-<div class="photo" style="background:
-  linear-gradient(180deg, rgba(6,10,8,.10), rgba(6,10,8,.52)),
-  url('front.jpeg') center/cover no-repeat;">
+            <div class="photo" style="background:
+              linear-gradient(180deg, rgba(6,10,8,.10), rgba(6,10,8,.52)),
+              url('front.jpeg') center/cover no-repeat;">
               <div class="photo-overlay">
                 <div class="badge">Outdoor escape</div>
                 <h3>Adria Compact</h3>
@@ -537,75 +546,79 @@ body{
           </div>
         </div>
       </section>
-<section class="section">
-  <div class="container">
-<button class="gallery-toggle" onclick="toggleGallery()">
-  Bekijk foto's
-</button>
 
-<div id="gallery" class="photo-gallery hidden">
-  <img src="front.jpeg">
-  <img src="back.jpeg">
-  <img src="inside01.jpeg">
-  <img src="inside02.jpeg">
-  <img src="inside03.jpeg">
-  <img src="bathroom.jpeg">
-  <img src="kitchen.jpeg">
-  <img src="garage.jpeg">
-</div>
-    <span class="eyebrow">Over de camper</span>
-<p class="lead">
-  Vanaf €119,- per dag • Volledig uitgerust • Direct klaar voor vertrek
-</p>
-    <h2>Adria Compact</h2>
-    <p class="lead">
-      Onze Adria Compact is een moderne en comfortabele camper, ideaal voor een ontspannen roadtrip vanuit Enschede.
-    </p>
+      <section class="section">
+        <div class="container">
+          <button class="gallery-toggle" onclick="toggleGallery()">
+            Bekijk foto's
+          </button>
 
-    <div class="cards">
-      <article class="info-card">
-        <h3>Praktisch</h3>
-        <p>Compact model, makkelijk te rijden en geschikt voor een comfortabele reis.</p>
-      </article>
+          <div id="gallery" class="photo-gallery hidden">
+            <img src="front.jpeg" alt="Voorkant camper">
+            <img src="back.jpeg" alt="Achterkant camper">
+            <img src="inside01.jpeg" alt="Binnenkant camper 1">
+            <img src="inside02.jpeg" alt="Binnenkant camper 2">
+            <img src="inside03.jpeg" alt="Binnenkant camper 3">
+            <img src="bathroom.jpeg" alt="Badkamer camper">
+            <img src="kitchen.jpeg" alt="Keuken camper">
+            <img src="garage.jpeg" alt="Opbergruimte camper">
+          </div>
 
-      <article class="info-card">
-        <h3>Inventaris</h3>
-        <p>Keukenspullen, servies, stoelen, tafel en basisinventaris aanwezig.</p>
-      </article>
+          <span class="eyebrow">Over de camper</span>
+          <p class="lead">
+            Vanaf €119,- per dag • Volledig uitgerust • Direct klaar voor vertrek
+          </p>
+          <h2>Adria Compact</h2>
+          <p class="lead">
+            Onze Adria Compact is een moderne en comfortabele camper, ideaal voor een ontspannen roadtrip vanuit Enschede.
+          </p>
 
-      <article class="info-card">
-        <h3>Extra's</h3>
-        <p>Luifel, opbergruimte en overige voorzieningen.</p>
-      </article>
-    </div>
-  </div>
-</section>
-<section class="section" id="beschikbaarheid">
-  <div class="container">
-    <span class="eyebrow">Live overzicht</span>
-    <h2>Beschikbaarheid</h2>
-    <p class="availability-intro">
-      Bekijk hieronder wanneer de camper al gereserveerd is. Lege dagen zijn nog beschikbaar.
-    </p>
+          <div class="cards">
+            <article class="info-card">
+              <h3>Praktisch</h3>
+              <p>Compact model, makkelijk te rijden en geschikt voor een comfortabele reis.</p>
+            </article>
 
-    <div class="legend availability-legend">
-      <span><i class="dot unavailable"></i>Gereserveerd</span>
-      <span>     Leeg = beschikbaar</span>
-    </div>
+            <article class="info-card">
+              <h3>Inventaris</h3>
+              <p>Keukenspullen, servies, stoelen, tafel en basisinventaris aanwezig.</p>
+            </article>
 
-    <div class="calendar-embed">
-<iframe 
-  src="https://calendar.google.com/calendar/embed?src=e4a1ebc5994e7ea7115a34b0371ff64b4e2ea87bcc77b2fa0605ad10280397aa%40group.calendar.google.com&ctz=Europe%2FAmsterdam&hl=nl&mode=MONTH&showTitle=0&showPrint=0&showTabs=0&showCalendars=0&showTz=0"
-  style="border:0; width:100%; height:700px;"
-  loading="lazy">
-</iframe>
-    </div>
+            <article class="info-card">
+              <h3>Extra's</h3>
+              <p>Luifel, opbergruimte en overige voorzieningen.</p>
+            </article>
+          </div>
+        </div>
+      </section>
 
-    <div class="notice">
-      Interesse in een bepaalde periode? Neem contact op om de mogelijkheden te bespreken.
-    </div>
-  </div>
-</section>
+      <section class="section" id="beschikbaarheid">
+        <div class="container">
+          <span class="eyebrow">Live overzicht</span>
+          <h2>Beschikbaarheid</h2>
+          <p class="availability-intro">
+            Bekijk hieronder wanneer de camper al gereserveerd is. Lege dagen zijn nog beschikbaar.
+          </p>
+
+          <div class="legend availability-legend">
+            <span><i class="dot unavailable"></i>Gereserveerd</span>
+            <span>Leeg = beschikbaar</span>
+          </div>
+
+          <div class="calendar-embed">
+            <iframe
+              src="https://calendar.google.com/calendar/embed?src=e4a1ebc5994e7ea7115a34b0371ff64b4e2ea87bcc77b2fa0605ad10280397aa%40group.calendar.google.com&ctz=Europe%2FAmsterdam&hl=nl&mode=MONTH&showTitle=0&showPrint=0&showTabs=0&showCalendars=0&showTz=0"
+              style="border:0; width:100%; height:700px;"
+              loading="lazy">
+            </iframe>
+          </div>
+
+          <div class="notice">
+            Interesse in een bepaalde periode? Neem contact op om de mogelijkheden te bespreken.
+          </div>
+        </div>
+      </section>
+
       <section class="section section-muted">
         <div class="container cards">
           <article class="info-card">
@@ -622,7 +635,6 @@ body{
           </article>
         </div>
       </section>
-
     </main>
 
     <footer class="footer">
@@ -699,8 +711,11 @@ body{
     const weekdays = ["Ma","Di","Wo","Do","Vr","Za","Zo"];
 
     function getData(){
-      try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}"); }
-      catch { return {}; }
+      try {
+        return JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
+      } catch {
+        return {};
+      }
     }
 
     function setData(data){
@@ -726,8 +741,8 @@ body{
     }
 
     function statusLabel(status){
-  if(status === "unavailable") return "Gereserveerd";
-  return "Beschikbaar";
+      if(status === "unavailable") return "Gereserveerd";
+      return "Beschikbaar";
     }
 
     function makeDay(day, status, clickable, onClick){
@@ -772,8 +787,11 @@ body{
         const status = data[key];
         const cell = makeDay(day, status, clickable, () => {
           const latest = getData();
-          if(latest[key] === "unavailable") delete latest[key];
-else latest[key] = "unavailable";
+          if(latest[key] === "unavailable") {
+            delete latest[key];
+          } else {
+            latest[key] = "unavailable";
+          }
           setData(latest);
           renderAll();
         });
@@ -788,37 +806,17 @@ else latest[key] = "unavailable";
     const loginForm = document.getElementById("loginForm");
     const pinInput = document.getElementById("pinInput");
 
-    const pubWeekdays = document.getElementById("pubWeekdays");
-    const pubGrid = document.getElementById("pubGrid");
-    const pubMonthLabel = document.getElementById("pubMonthLabel");
-
     const admWeekdays = document.getElementById("admWeekdays");
     const admGrid = document.getElementById("admGrid");
     const admMonthLabel = document.getElementById("admMonthLabel");
-
-    let pubDate = new Date();
-    pubDate.setDate(1);
 
     let admDate = new Date();
     admDate.setDate(1);
 
     function renderAll(){
-      if(!pubWeekdays.innerHTML) addWeekdays(pubWeekdays);
-      renderCalendar(pubGrid, pubMonthLabel, pubDate, false);
-
       if(!admWeekdays.innerHTML) addWeekdays(admWeekdays);
       renderCalendar(admGrid, admMonthLabel, admDate, true);
     }
-
-    document.getElementById("pubPrev").addEventListener("click", () => {
-      pubDate = new Date(pubDate.getFullYear(), pubDate.getMonth() - 1, 1);
-      renderAll();
-    });
-
-    document.getElementById("pubNext").addEventListener("click", () => {
-      pubDate = new Date(pubDate.getFullYear(), pubDate.getMonth() + 1, 1);
-      renderAll();
-    });
 
     document.getElementById("admPrev").addEventListener("click", () => {
       admDate = new Date(admDate.getFullYear(), admDate.getMonth() - 1, 1);
@@ -879,28 +877,33 @@ else latest[key] = "unavailable";
       if(isAdmin){
         adminPanel.classList.add("hidden");
         loginCard.classList.remove("hidden");
-      } else {
-        renderCalendar(pubGrid, pubMonthLabel, pubDate, false);
       }
     }
-function toggleGallery(){
-  const gallery = document.getElementById("gallery");
-  gallery.classList.toggle("hidden");
-}
+
+    function toggleGallery(){
+      const gallery = document.getElementById("gallery");
+      gallery.classList.toggle("hidden");
+    }
+
+    function toonTelefoonnummer(){
+      const telefoonnummerLink = document.getElementById("telefoonnummerLink");
+      telefoonnummerLink.classList.remove("hidden");
+    }
+
     document.getElementById("year").textContent = new Date().getFullYear();
-    addWeekdays(pubWeekdays);
     addWeekdays(admWeekdays);
     renderAll();
     route();
     window.addEventListener("hashchange", route);
   </script>
-<a
-  class="floating-whatsapp"
-  href="https://wa.me/31613739123?text=Hallo!%20Ik%20heb%20interesse%20in%20de%20Adria%20Compact.%20Kunt%20u%20meer%20informatie%20geven?"
-  aria-label="WhatsApp ons"
-  title="WhatsApp ons"
->
-  ✆
-</a>
+
+  <a
+    class="floating-whatsapp"
+    href="https://wa.me/31613937123?text=Hallo!%20Ik%20heb%20interesse%20in%20de%20Adria%20Compact.%20Kunt%20u%20meer%20informatie%20geven?"
+    aria-label="WhatsApp ons"
+    title="WhatsApp ons"
+  >
+    ✆
+  </a>
 </body>
 </html>
