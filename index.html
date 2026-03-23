@@ -3,461 +3,497 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CamperCompact-Enschede | Adria Compact</title>
-  <meta name="description" content="Bekijk de beschikbaarheid van de Adria Compact van CamperCompact-Enschede." />
+  <title>Camperhuren-Twente | Adria Compact</title>
+  <meta name="description" content="Bekijk de beschikbaarheid van de Adria Compact van Camperhuren-Twente." />
   <style>
-:root{
-  --bg:#fffaf2;
-  --bg2:#f7efe1;
-  --card:rgba(255,255,255,.9);
-  --line:rgba(0,0,0,.08);
-  --text:#2b2b2b;
-  --muted:#7a736b;
-  --green:#f4b860;
-  --green2:#e39d3c;
-  --red:#e57373;
-  --unknown:#d8d2c8;
-  --shadow:0 12px 30px rgba(0,0,0,.08);
-  --radius:22px;
-}
-
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-
-body{
-  margin:0;
-  font-family:Arial, Helvetica, sans-serif;
-  color:var(--text);
-  background:var(--bg);
-}
-
-a{text-decoration:none;color:inherit}
-button,input{font:inherit}
-
-.container{
-  width:min(1100px, calc(100% - 32px));
-  margin:0 auto;
-}
-
-.hidden{display:none !important}
-
-.site-header{
-  position:sticky;
-  top:0;
-  z-index:20;
-  background:rgba(8,12,10,.72);
-  backdrop-filter:blur(12px);
-  border-bottom:1px solid var(--line);
-}
-
-.nav{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:16px;
-  padding:14px 0;
-}
-
-.brand{
-  display:flex;
-  align-items:center;
-  gap:12px;
-}
-
-.brand-mark{
-  width:46px;
-  height:46px;
-  border-radius:14px;
-  display:grid;
-  place-items:center;
-  font-weight:700;
-  color:#082114;
-  background:linear-gradient(135deg,var(--green),var(--green2));
-  box-shadow:var(--shadow);
-}
-
-.brand-title{font-weight:700}
-.brand-sub{font-size:13px;color:var(--muted)}
-
-.btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  padding:12px 18px;
-  border-radius:14px;
-  border:1px solid transparent;
-  font-weight:700;
-  cursor:pointer;
-  background:linear-gradient(135deg,var(--green),var(--green2));
-  color:#082114;
-}
-
-.btn-secondary{
-  background:rgba(255,255,255,.06);
-  border-color:var(--line);
-  color:var(--text);
-}
-
-.btn-ghost{
-  background:transparent;
-  border-color:var(--line);
-  color:var(--text);
-}
-
-.btn-whatsapp{
-  background:#25D366;
-  color:white;
-}
-
-.btn-whatsapp:hover{
-  filter:brightness(1.05);
-}
-
-.floating-whatsapp{
-  position:fixed;
-  right:20px;
-  bottom:20px;
-  width:60px;
-  height:60px;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:#25D366;
-  color:white;
-  font-size:28px;
-  text-decoration:none;
-  box-shadow:0 16px 35px rgba(0,0,0,.28);
-  z-index:9999;
-}
-
-.floating-whatsapp:hover{
-  transform:translateY(-2px);
-}
-
-@media (max-width:640px){
-  .floating-whatsapp{
-    width:56px;
-    height:56px;
-    right:16px;
-    bottom:16px;
-    font-size:26px;
-  }
-}
-
-.gallery-toggle{
-  margin-bottom:20px;
-  padding:12px 18px;
-  border-radius:12px;
-  border:none;
-  font-weight:600;
-  cursor:pointer;
-  background:linear-gradient(135deg,var(--green),var(--green2));
-  color:#082114;
-}
-
-.photo-gallery{
-  display:grid;
-  grid-template-columns:repeat(3, 1fr);
-  gap:12px;
-  margin-bottom:20px;
-}
-
-.photo-gallery img{
-  width:100%;
-  height:180px;
-  object-fit:cover;
-  border-radius:12px;
-  display:block;
-}
-
-.hero{
-  padding:54px 0 24px;
-}
-
-
-.eyebrow{
-  display:inline-block;
-  margin-bottom:12px;
-  color:var(--green);
-  font-size:12px;
-  letter-spacing:.12em;
-  text-transform:uppercase;
-  font-weight:700;
-}
-
-h1,h2,h3,p{margin-top:0}
-
-h1{
-  font-size:clamp(38px, 6vw, 64px);
-  line-height:.98;
-  letter-spacing:-.04em;
-  margin-bottom:16px;
-}
-
-h1 span{color:var(--green)}
-
-h2{
-  font-size:clamp(28px,4vw,42px);
-  letter-spacing:-.04em;
-  margin-bottom:8px;
-}
-
-.lead{
-  font-size:18px;
-  line-height:1.65;
-  color:var(--muted);
-  max-width:640px;
-}
-
-.hero-actions,.chips,.legend,.toolbar{
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
-}
-
-.hero-actions{margin:24px 0 20px}
-
-.chips span{
-  padding:10px 14px;
-  border:1px solid var(--line);
-  border-radius:999px;
-  background:rgba(255,255,255,.05);
-  color:#dbe7e0;
-  font-size:14px;
-}
-
-.photo-card,.calendar-shell,.info-card,.contact-box,.login-card{
-  border-radius:var(--radius);
-  border:1px solid var(--line);
-  background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
-  box-shadow:var(--shadow);
-}
-
-.photo-card{padding:16px}
-
-.photo{
-  min-height:430px;
-  border-radius:18px;
-  overflow:hidden;
-  position:relative;
-}
-
-.photo-large{
-  min-height:620px;
-}
-
-.section{padding:34px 0}
-
-.section-muted{
-  border-top:1px solid var(--line);
-  border-bottom:1px solid var(--line);
-  background:rgba(255,255,255,.03);
-}
-
-.section-head{
-  display:flex;
-  justify-content:space-between;
-  align-items:end;
-  gap:18px;
-  margin-bottom:18px;
-}
-
-.section-head p{color:var(--muted)}
-
-.availability-intro{
-  color:var(--muted);
-  max-width:760px;
-  margin-bottom:14px;
-}
-
-.availability-legend{
-  margin-bottom:18px;
-}
-
-.calendar-shell{padding:18px}
-
-.calendar-top{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:12px;
-  margin-bottom:16px;
-}
-
-.calendar-embed{
-  overflow:hidden;
-  border-radius:22px;
-  border:1px solid var(--line);
-  background:rgba(255,255,255,.85);
-  box-shadow:var(--shadow);
-}
-
-.icon-btn{
-  width:44px;
-  height:44px;
-  border-radius:14px;
-  border:1px solid var(--line);
-  background:rgba(255,255,255,.06);
-  color:var(--text);
-  cursor:pointer;
-}
-
-.weekdays,.calendar-grid{
-  display:grid;
-  grid-template-columns:repeat(7, minmax(0, 1fr));
-  gap:10px;
-}
-
-.weekdays{margin-bottom:10px}
-
-.weekday{
-  text-align:center;
-  font-size:13px;
-  color:var(--muted);
-  padding:8px 0;
-}
-
-.day{
-  min-height:92px;
-  border-radius:18px;
-  border:1px solid var(--line);
-  background:rgba(255,255,255,.04);
-  padding:12px;
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
-  gap:12px;
-}
-
-.day.empty{
-  background:transparent;
-  border-style:dashed;
-  opacity:.22;
-}
-
-.day-num{font-weight:700}
-
-.day-label{
-  align-self:flex-start;
-  border-radius:999px;
-  padding:7px 10px;
-  font-size:12px;
-  font-weight:700;
-}
-
-.day.available .day-label{background:rgba(119,214,156,.14);color:#98ecb9}
-.day.unavailable .day-label{background:rgba(255,133,133,.14);color:#ffaaaa}
-.day.unknown .day-label{background:rgba(255,255,255,.08);color:#d9e2dd}
-
-.admin .day{
-  cursor:pointer;
-  transition:transform .12s ease, border-color .12s ease;
-}
-
-.admin .day:hover{
-  transform:translateY(-2px);
-  border-color:rgba(119,214,156,.32);
-}
-
-.legend span{
-  color:var(--muted);
-  font-size:14px;
-}
-
-.dot{
-  width:11px;
-  height:11px;
-  display:inline-block;
-  border-radius:50%;
-  margin-right:8px;
-  vertical-align:middle;
-}
-
-.dot.available{background:var(--green)}
-.dot.unavailable{background:var(--red)}
-.dot.unknown{background:var(--unknown)}
-
-.notice{
-  margin-top:16px;
-  color:var(--muted);
-  line-height:1.6;
-}
-
-.cards{
-  display:grid;
-  grid-template-columns:repeat(3, 1fr);
-  gap:18px;
-}
-
-.info-card{padding:24px}
-.info-card p{color:var(--muted);line-height:1.6}
-
-.contact-box{
-  padding:24px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:18px;
-  flex-wrap:wrap;
-}
-
-.footer{
-  padding:24px 0 34px;
-  color:var(--muted);
-}
-
-.footer-row{
-  display:flex;
-  justify-content:space-between;
-  gap:16px;
-  flex-wrap:wrap;
-  align-items:center;
-}
-
-.login-wrap{
-  min-height:100vh;
-  display:grid;
-  place-items:center;
-  padding:28px 16px;
-}
-
-.login-card{
-  width:min(520px,100%);
-  padding:28px;
-}
-
-.stack{
-  display:grid;
-  gap:12px;
-}
-
-.input{
-  width:100%;
-  padding:14px 16px;
-  border-radius:14px;
-  border:1px solid var(--line);
-  background:rgba(255,255,255,.06);
-  color:var(--text);
-}
-
-.small{
-  font-size:14px;
-  color:var(--muted);
-  line-height:1.6;
-}
-
-@media (max-width:920px){
-  .hero-grid,.cards{grid-template-columns:1fr}
-  .section-head,.nav{align-items:stretch;flex-direction:column}
-  .photo{min-height:320px}
-}
-
-@media (max-width:640px){
-  .weekdays,.calendar-grid{gap:7px}
-  .day{min-height:80px;padding:10px;border-radius:14px}
-  .day-label{font-size:11px;padding:6px 8px}
-}
+    :root{
+      --bg:#fffaf2;
+      --bg2:#f7efe1;
+      --card:rgba(255,255,255,.9);
+      --line:rgba(0,0,0,.08);
+      --text:#2b2b2b;
+      --muted:#7a736b;
+      --green:#f4b860;
+      --green2:#e39d3c;
+      --red:#e57373;
+      --unknown:#d8d2c8;
+      --shadow:0 12px 30px rgba(0,0,0,.08);
+      --radius:22px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+
+    body{
+      margin:0;
+      font-family:Arial, Helvetica, sans-serif;
+      color:var(--text);
+      background:var(--bg);
+    }
+
+    a{text-decoration:none;color:inherit}
+    button,input{font:inherit}
+
+    .container{
+      width:min(1100px, calc(100% - 32px));
+      margin:0 auto;
+    }
+
+    .hidden{display:none !important}
+
+    .site-header{
+      position:sticky;
+      top:0;
+      z-index:20;
+      background:rgba(8,12,10,.72);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid var(--line);
+    }
+
+    .nav{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:16px;
+      padding:14px 0;
+    }
+
+    .menu-wrap{
+      position:relative;
+    }
+
+    .menu-toggle{
+      width:48px;
+      height:48px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.06);
+      color:white;
+      cursor:pointer;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:24px;
+    }
+
+    .menu-dropdown{
+      position:absolute;
+      top:58px;
+      right:0;
+      min-width:220px;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:16px;
+      box-shadow:var(--shadow);
+      padding:10px;
+      display:none;
+      z-index:1000;
+    }
+
+    .menu-dropdown.show{
+      display:block;
+    }
+
+    .menu-dropdown a{
+      display:block;
+      padding:12px 14px;
+      border-radius:12px;
+      color:var(--text);
+    }
+
+    .menu-dropdown a:hover{
+      background:var(--bg2);
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+
+    .brand-mark{
+      width:46px;
+      height:46px;
+      border-radius:14px;
+      display:grid;
+      place-items:center;
+      font-weight:700;
+      color:#082114;
+      background:linear-gradient(135deg,var(--green),var(--green2));
+      box-shadow:var(--shadow);
+    }
+
+    .brand-title{font-weight:700}
+    .brand-sub{font-size:13px;color:var(--muted)}
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:12px 18px;
+      border-radius:14px;
+      border:1px solid transparent;
+      font-weight:700;
+      cursor:pointer;
+      background:linear-gradient(135deg,var(--green),var(--green2));
+      color:#082114;
+    }
+
+    .btn-secondary{
+      background:rgba(255,255,255,.06);
+      border-color:var(--line);
+      color:var(--text);
+    }
+
+    .btn-ghost{
+      background:transparent;
+      border-color:var(--line);
+      color:var(--text);
+    }
+
+    .btn-whatsapp{
+      background:#25D366;
+      color:white;
+    }
+
+    .btn-whatsapp:hover{
+      filter:brightness(1.05);
+    }
+
+    .floating-whatsapp{
+      position:fixed;
+      right:20px;
+      bottom:20px;
+      width:60px;
+      height:60px;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:#25D366;
+      color:white;
+      font-size:28px;
+      text-decoration:none;
+      box-shadow:0 16px 35px rgba(0,0,0,.28);
+      z-index:9999;
+    }
+
+    .floating-whatsapp:hover{
+      transform:translateY(-2px);
+    }
+
+    .gallery-toggle{
+      margin-bottom:20px;
+      padding:12px 18px;
+      border-radius:12px;
+      border:none;
+      font-weight:600;
+      cursor:pointer;
+      background:linear-gradient(135deg,var(--green),var(--green2));
+      color:#082114;
+    }
+
+    .photo-gallery{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:12px;
+      margin-bottom:20px;
+    }
+
+    .photo-gallery img{
+      width:100%;
+      height:180px;
+      object-fit:cover;
+      border-radius:12px;
+      display:block;
+    }
+
+    .hero{
+      padding:54px 0 24px;
+    }
+
+    .eyebrow{
+      display:inline-block;
+      margin-bottom:12px;
+      color:var(--green);
+      font-size:12px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      font-weight:700;
+    }
+
+    h1,h2,h3,p{margin-top:0}
+
+    h1{
+      font-size:clamp(38px, 6vw, 64px);
+      line-height:.98;
+      letter-spacing:-.04em;
+      margin-bottom:16px;
+    }
+
+    h1 span{color:var(--green)}
+
+    h2{
+      font-size:clamp(28px,4vw,42px);
+      letter-spacing:-.04em;
+      margin-bottom:8px;
+    }
+
+    .lead{
+      font-size:18px;
+      line-height:1.65;
+      color:var(--muted);
+      max-width:760px;
+    }
+
+    .hero-actions,.chips,.legend,.toolbar{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
+    .hero-actions{margin:24px 0 20px}
+
+    .photo-card,.calendar-shell,.info-card,.contact-box,.login-card{
+      border-radius:var(--radius);
+      border:1px solid var(--line);
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      box-shadow:var(--shadow);
+    }
+
+    .photo-card{
+      padding:16px;
+      margin-top:10px;
+    }
+
+    .photo{
+      min-height:620px;
+      border-radius:18px;
+      overflow:hidden;
+      position:relative;
+    }
+
+    .section{padding:34px 0}
+
+    .section-muted{
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+    }
+
+    .section-head{
+      display:flex;
+      justify-content:space-between;
+      align-items:end;
+      gap:18px;
+      margin-bottom:18px;
+    }
+
+    .section-head p{color:var(--muted)}
+
+    .availability-intro{
+      color:var(--muted);
+      max-width:760px;
+      margin-bottom:14px;
+    }
+
+    .availability-legend{
+      margin-bottom:18px;
+    }
+
+    .calendar-shell{padding:18px}
+
+    .calendar-top{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      margin-bottom:16px;
+    }
+
+    .calendar-embed{
+      overflow:hidden;
+      border-radius:22px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.85);
+      box-shadow:var(--shadow);
+    }
+
+    .icon-btn{
+      width:44px;
+      height:44px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.06);
+      color:var(--text);
+      cursor:pointer;
+    }
+
+    .weekdays,.calendar-grid{
+      display:grid;
+      grid-template-columns:repeat(7, minmax(0, 1fr));
+      gap:10px;
+    }
+
+    .weekdays{margin-bottom:10px}
+
+    .weekday{
+      text-align:center;
+      font-size:13px;
+      color:var(--muted);
+      padding:8px 0;
+    }
+
+    .day{
+      min-height:92px;
+      border-radius:18px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
+      padding:12px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      gap:12px;
+    }
+
+    .day.empty{
+      background:transparent;
+      border-style:dashed;
+      opacity:.22;
+    }
+
+    .day-num{font-weight:700}
+
+    .day-label{
+      align-self:flex-start;
+      border-radius:999px;
+      padding:7px 10px;
+      font-size:12px;
+      font-weight:700;
+    }
+
+    .day.available .day-label{background:rgba(119,214,156,.14);color:#98ecb9}
+    .day.unavailable .day-label{background:rgba(255,133,133,.14);color:#ffaaaa}
+    .day.unknown .day-label{background:rgba(255,255,255,.08);color:#d9e2dd}
+
+    .admin .day{
+      cursor:pointer;
+      transition:transform .12s ease, border-color .12s ease;
+    }
+
+    .admin .day:hover{
+      transform:translateY(-2px);
+      border-color:rgba(119,214,156,.32);
+    }
+
+    .legend span{
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    .dot{
+      width:11px;
+      height:11px;
+      display:inline-block;
+      border-radius:50%;
+      margin-right:8px;
+      vertical-align:middle;
+    }
+
+    .dot.available{background:var(--green)}
+    .dot.unavailable{background:var(--red)}
+    .dot.unknown{background:var(--unknown)}
+
+    .notice{
+      margin-top:16px;
+      color:var(--muted);
+      line-height:1.6;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:18px;
+    }
+
+    .info-card{padding:24px}
+    .info-card p{color:var(--muted);line-height:1.6}
+
+    .contact-box{
+      padding:24px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:18px;
+      flex-wrap:wrap;
+    }
+
+    .footer{
+      padding:24px 0 34px;
+      color:var(--muted);
+    }
+
+    .footer-row{
+      display:flex;
+      justify-content:space-between;
+      gap:16px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
+    .login-wrap{
+      min-height:100vh;
+      display:grid;
+      place-items:center;
+      padding:28px 16px;
+    }
+
+    .login-card{
+      width:min(520px,100%);
+      padding:28px;
+    }
+
+    .stack{
+      display:grid;
+      gap:12px;
+    }
+
+    .input{
+      width:100%;
+      padding:14px 16px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.06);
+      color:var(--text);
+    }
+
+    .small{
+      font-size:14px;
+      color:var(--muted);
+      line-height:1.6;
+    }
+
+    @media (max-width:920px){
+      .cards{grid-template-columns:1fr}
+      .section-head,.nav{align-items:stretch;flex-direction:column}
+      .photo{min-height:360px}
+    }
+
+    @media (max-width:640px){
+      .weekdays,.calendar-grid{gap:7px}
+      .day{min-height:80px;padding:10px;border-radius:14px}
+      .day-label{font-size:11px;padding:6px 8px}
+      .floating-whatsapp{
+        width:56px;
+        height:56px;
+        right:16px;
+        bottom:16px;
+        font-size:26px;
+      }
+      .photo-gallery{
+        grid-template-columns:1fr 1fr;
+      }
+    }
   </style>
 </head>
 <body>
@@ -465,57 +501,70 @@ h2{
     <header class="site-header">
       <div class="container nav">
         <div class="brand">
-          <div class="brand-mark">CC</div>
+          <div class="brand-mark">CT</div>
           <div>
-            <div class="brand-title">CamperCompact-Enschede</div>
+            <div class="brand-title">Camperhuren-Twente</div>
             <div class="brand-sub">Adria Compact verhuur</div>
           </div>
         </div>
-        <a class="btn btn-secondary" href="#beschikbaarheid">Bekijk beschikbaarheid</a>
+
+        <div class="menu-wrap">
+          <button class="menu-toggle" type="button" onclick="toggleMenu()" aria-label="Menu openen">
+            ☰
+          </button>
+
+          <div class="menu-dropdown" id="menuDropdown">
+            <a href="praktisch.html">Praktisch</a>
+            <a href="inventaris.html">Inventaris</a>
+            <a href="prijzen.html">Prijzen</a>
+            <a href="voorwaarden.html">Voorwaarden</a>
+          </div>
+        </div>
       </div>
     </header>
 
     <main>
-<section class="hero">
-  <div class="container">
-    <span class="eyebrow">Modern · Outdoor · Compact reizen</span>
-    <h1>Bekijk de beschikbaarheid van onze <span>Adria Compact</span></h1>
-    <p class="lead">
-      Bezoekers kunnen hier alleen zien of de camper beschikbaar is. Reserveren gaat altijd persoonlijk via contact met CamperCompact-Enschede.
-    </p>
+      <section class="hero">
+        <div class="container">
+          <span class="eyebrow">Modern · Outdoor · Compact reizen</span>
+          <h1>Bekijk de beschikbaarheid van onze <span>Adria Compact</span></h1>
+          <p class="lead">
+            Bezoekers kunnen hier alleen zien of de camper beschikbaar is. Reserveren gaat altijd persoonlijk via contact met Camperhuren-Twente.
+          </p>
 
-<div class="hero-actions">
-  <a class="btn" href="#beschikbaarheid">Beschikbaarheid</a>
+          <div class="hero-actions">
+            <a class="btn" href="#beschikbaarheid">Beschikbaarheid</a>
 
-  <a class="btn btn-secondary" href="mailto:campercompact.verhuur@gmail.com?subject=Vraag over camper&body=Hallo,%0A%0AIk heb interesse in de camper voor de volgende periode:%0A%0A- Datum:%0A- Aantal personen:%0A%0AAlvast bedankt!">
-    Stuur e-mail
-  </a>
+            <a class="btn btn-secondary" href="mailto:camperhurentwente@gmail.com?subject=Vraag over camper&body=Hallo,%0A%0AIk heb interesse in de camper voor de volgende periode:%0A%0A- Datum:%0A- Aantal personen:%0A%0AAlvast bedankt!">
+              Stuur e-mail
+            </a>
 
-  <button class="btn btn-secondary" type="button" onclick="toonTelefoonnummer()">
-    Bellen
-  </button>
+            <button class="btn btn-secondary" type="button" onclick="toonTelefoonnummer()">
+              Bellen
+            </button>
 
-  <a id="telefoonnummerLink" class="btn btn-ghost hidden" href="tel:+31613937123">
-    06 13 93 71 23
-  </a>
+            <a id="telefoonnummerLink" class="btn btn-ghost hidden" href="tel:+31613739139">
+              06 13 73 91 39
+            </a>
 
-  <a class="btn btn-whatsapp" href="https://wa.me/31613937123?text=Hallo!%20Ik%20heb%20interesse%20in%20de%20camper.%20Kunt%20u%20meer%20informatie%20geven?">
-    WhatsApp
-  </a>
-</div>
+            <a class="btn btn-whatsapp" href="https://wa.me/31613739139?text=Hallo!%20Ik%20heb%20interesse%20in%20de%20camper.%20Kunt%20u%20meer%20informatie%20geven?">
+              WhatsApp
+            </a>
+          </div>
 
-    <div class="photo-card">
-      <div class="photo photo-large" style="background:url('front.jpeg') center/cover no-repeat;"></div>
-    </div>
+          <div class="photo-card">
+            <div class="photo" style="background:url('front.jpeg') center/cover no-repeat;"></div>
+          </div>
 
-    <div style="margin-top:18px;">
-      <h3>Adria Compact</h3>
-      <p class="lead">
-        Een nette, moderne camper voor ontspannen roadtrips en compacte vrijheid.
-      </p>
-    </div>
-  </div>
-</section>
+          <div style="margin-top:18px;">
+            <h3>Adria Compact</h3>
+            <p class="lead">
+              Een nette, moderne camper voor ontspannen roadtrips en compacte vrijheid.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <section class="section">
         <div class="container">
           <button class="gallery-toggle" onclick="toggleGallery()">
@@ -537,9 +586,10 @@ h2{
           <p class="lead">
             Vanaf €119,- per dag • Volledig uitgerust • Direct klaar voor vertrek
           </p>
+
           <h2>Adria Compact</h2>
           <p class="lead">
-            Onze Adria Compact is een moderne en comfortabele camper, ideaal voor een ontspannen roadtrip vanuit Enschede. Heeft de rij-eigenschappen en wendbaarheid van een buscamper maar toch alle comfort en gemakken van een camper.
+            Onze Adria Compact is een moderne en comfortabele camper, ideaal voor een ontspannen roadtrip vanuit Twente.
           </p>
 
           <div class="cards">
@@ -576,7 +626,7 @@ h2{
 
           <div class="calendar-embed">
             <iframe
-              src="https://calendar.google.com/calendar/embed?src=e4a1ebc5994e7ea7115a34b0371ff64b4e2ea87bcc77b2fa0605ad10280397aa%40group.calendar.google.com&ctz=Europe%2FAmsterdam&hl=nl&mode=MONTH&showTitle=0&showPrint=0&showTabs=0&showCalendars=0&showTz=0"
+              src="https://calendar.google.com/calendar/embed?src=camperhurentwente%40gmail.com&ctz=Europe%2FAmsterdam&hl=nl&mode=MONTH&showTitle=0&showPrint=0&showTabs=0&showCalendars=0&showTz=0"
               style="border:0; width:100%; height:700px;"
               loading="lazy">
             </iframe>
@@ -608,7 +658,7 @@ h2{
 
     <footer class="footer">
       <div class="container footer-row">
-        <div>© <span id="year"></span> CamperCompact-Enschede</div>
+        <div>© <span id="year"></span> Camperhuren-Twente</div>
         <a href="#admin" style="color:var(--green);">Beheer</a>
       </div>
     </footer>
@@ -618,18 +668,21 @@ h2{
     <div class="login-wrap" id="loginWrap">
       <div class="login-card" id="loginCard">
         <div class="brand" style="justify-content:center;margin-bottom:18px;">
-          <div class="brand-mark">CC</div>
+          <div class="brand-mark">CT</div>
           <div>
-            <div class="brand-title">CamperCompact-Enschede</div>
+            <div class="brand-title">Camperhuren-Twente</div>
             <div class="brand-sub">Beheeromgeving</div>
           </div>
         </div>
+
         <h1 style="font-size:36px;margin-bottom:12px;">Beheer openen</h1>
         <p class="small">Voer de beheercode in om de beschikbaarheid aan te passen.</p>
+
         <form id="loginForm" class="stack">
           <input class="input" id="pinInput" type="password" placeholder="Beheercode" />
           <button class="btn" type="submit">Open beheer</button>
         </form>
+
         <p class="small">
           Standaardcode: <strong>camper2026</strong><br>
           Die kun je later bovenin de code aanpassen.
@@ -643,6 +696,7 @@ h2{
             <h2>Beschikbaarheid beheren</h2>
             <p>Klik op een datum om te wisselen tussen beschikbaar, niet beschikbaar en niet ingesteld.</p>
           </div>
+
           <div class="toolbar">
             <button class="btn btn-secondary" id="exportBtn" type="button">Export backup</button>
             <label class="btn btn-ghost" for="importInput" style="cursor:pointer;">Import backup</label>
@@ -675,7 +729,7 @@ h2{
   </div>
 
   <script>
-    const STORAGE_KEY = "campercompact_enschede_availability_v1";
+    const STORAGE_KEY = "camperhuren_twente_availability_v1";
     const ADMIN_PIN = "camper2026";
     const weekdays = ["Ma","Di","Wo","Do","Vr","Za","Zo"];
 
@@ -774,10 +828,10 @@ h2{
     const adminPanel = document.getElementById("adminPanel");
     const loginForm = document.getElementById("loginForm");
     const pinInput = document.getElementById("pinInput");
-
     const admWeekdays = document.getElementById("admWeekdays");
     const admGrid = document.getElementById("admGrid");
     const admMonthLabel = document.getElementById("admMonthLabel");
+    const menuDropdown = document.getElementById("menuDropdown");
 
     let admDate = new Date();
     admDate.setDate(1);
@@ -785,6 +839,31 @@ h2{
     function renderAll(){
       if(!admWeekdays.innerHTML) addWeekdays(admWeekdays);
       renderCalendar(admGrid, admMonthLabel, admDate, true);
+    }
+
+    function route(){
+      const isAdmin = location.hash === "#admin";
+      publicView.classList.toggle("hidden", isAdmin);
+      adminView.classList.toggle("hidden", !isAdmin);
+
+      if(isAdmin){
+        adminPanel.classList.add("hidden");
+        loginCard.classList.remove("hidden");
+      }
+    }
+
+    function toggleGallery(){
+      const gallery = document.getElementById("gallery");
+      gallery.classList.toggle("hidden");
+    }
+
+    function toonTelefoonnummer(){
+      const telefoonnummerLink = document.getElementById("telefoonnummerLink");
+      telefoonnummerLink.classList.remove("hidden");
+    }
+
+    function toggleMenu(){
+      menuDropdown.classList.toggle("show");
     }
 
     document.getElementById("admPrev").addEventListener("click", () => {
@@ -820,7 +899,7 @@ h2{
       const url = URL.createObjectURL(blob);
       const a = document.createElement("a");
       a.href = url;
-      a.download = "campercompact-backup.json";
+      a.download = "camperhuren-twente-backup.json";
       a.click();
       URL.revokeObjectURL(url);
     });
@@ -828,36 +907,30 @@ h2{
     document.getElementById("importInput").addEventListener("change", async (e) => {
       const file = e.target.files && e.target.files[0];
       if(!file) return;
+
       try{
         const text = await file.text();
         const data = JSON.parse(text);
         setData(data);
         renderAll();
         alert("Backup geïmporteerd.");
-      }catch{
+      } catch {
         alert("Dit bestand kon niet worden ingelezen.");
       }
     });
 
-    function route(){
-      const isAdmin = location.hash === "#admin";
-      publicView.classList.toggle("hidden", isAdmin);
-      adminView.classList.toggle("hidden", !isAdmin);
-      if(isAdmin){
-        adminPanel.classList.add("hidden");
-        loginCard.classList.remove("hidden");
+    document.addEventListener("click", function(e){
+      const menuWrap = document.querySelector(".menu-wrap");
+      if(menuWrap && !menuWrap.contains(e.target)){
+        menuDropdown.classList.remove("show");
       }
-    }
+    });
 
-    function toggleGallery(){
-      const gallery = document.getElementById("gallery");
-      gallery.classList.toggle("hidden");
-    }
-
-    function toonTelefoonnummer(){
-      const telefoonnummerLink = document.getElementById("telefoonnummerLink");
-      telefoonnummerLink.classList.remove("hidden");
-    }
+    document.addEventListener("keydown", function(e){
+      if(e.key === "Escape"){
+        menuDropdown.classList.remove("show");
+      }
+    });
 
     document.getElementById("year").textContent = new Date().getFullYear();
     addWeekdays(admWeekdays);
