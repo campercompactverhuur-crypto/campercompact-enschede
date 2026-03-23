@@ -254,6 +254,15 @@ body{
     }
 
     .section-head p{color:var(--muted)}
+.availability-intro{
+  color:var(--muted);
+  max-width:760px;
+  margin-bottom:14px;
+}
+
+.availability-legend{
+  margin-bottom:18px;
+}
 
     .calendar-shell{padding:18px}
     .calendar-top{
@@ -537,31 +546,32 @@ body{
     </div>
   </div>
 </section>
-      <section class="section" id="beschikbaarheid">
-        <div class="container">
-          <div class="section-head">
-            <div>
-              <span class="eyebrow">Live overzicht</span>
-              <h2>Beschikbaarheid</h2>
-              <p>Bekijk hieronder wanneer de camper al gereserveerd is. Lege dagen zijn nog beschikbaar</p>
-            </div>
-<div class="legend">
-  <span><i class="dot unavailable"></i>Gereserveerd</span>
-  <span>Leeg = beschikbaar</span>
-</div>
-<div class="calendar-embed">
-  <iframe 
-    src="https://calendar.google.com/calendar/embed?src=e4a1ebc5994e7ea7115a34b0371ff64b4e2ea87bcc77b2fa0605ad10280397aa%40group.calendar.google.com&ctz=Europe%2FAmsterdam" 
-    style="border:0; width:100%; height:600px;" 
-    loading="lazy">
-  </iframe>
-</div>
-          <div class="notice">
-            Interesse in een bepaalde periode? Neem contact op om de mogelijkheden te bespreken.
-          </div>
-        </div>
-      </section>
+<section class="section" id="beschikbaarheid">
+  <div class="container">
+    <span class="eyebrow">Live overzicht</span>
+    <h2>Beschikbaarheid</h2>
+    <p class="availability-intro">
+      Bekijk hieronder wanneer de camper al gereserveerd is. Lege dagen zijn nog beschikbaar.
+    </p>
 
+    <div class="legend availability-legend">
+      <span><i class="dot unavailable"></i>Gereserveerd</span>
+      <span>Leeg = beschikbaar</span>
+    </div>
+
+    <div class="calendar-embed">
+<iframe 
+  src="https://calendar.google.com/calendar/embed?src=e4a1ebc5994e7ea7115a34b0371ff64b4e2ea87bcc77b2fa0605ad10280397aa%40group.calendar.google.com&ctz=Europe%2FAmsterdam&hl=nl&mode=MONTH&showTitle=0&showPrint=0&showTabs=0&showCalendars=0&showTz=0"
+  style="border:0; width:100%; height:700px;"
+  loading="lazy">
+</iframe>
+    </div>
+
+    <div class="notice">
+      Interesse in een bepaalde periode? Neem contact op om de mogelijkheden te bespreken.
+    </div>
+  </div>
+</section>
       <section class="section section-muted">
         <div class="container cards">
           <article class="info-card">
