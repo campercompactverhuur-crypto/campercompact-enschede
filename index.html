@@ -100,10 +100,20 @@
     }
 
     .btn-ghost{
-      background:transparent;
-      border-color:var(--line);
-      color:var(--text);
-    }
+  background:transparent;
+  border-color:var(--line);
+  color:var(--text);
+}
+
+/* HIER PLAKKEN 👇 */
+
+.btn-whatsapp{
+  background:#25D366;
+  color:white;
+}
+
+.btn-whatsapp:hover{
+  filter:brightness(1.05);    }
 
     .hero{
       padding:54px 0 24px;
@@ -417,6 +427,17 @@
               Bezoekers kunnen hier alleen zien of de camper beschikbaar is. Reserveren gaat altijd persoonlijk via contact met CamperCompact-Enschede.
             </p>
             <div class="hero-actions">
+  <a class="btn" href="#beschikbaarheid">Beschikbaarheid</a>
+  <a class="btn btn-secondary" href="mailto:campercompact.verhuur@gmail.com?subject=Aanvraag camper&body=Hallo,%0A%0AIk heb interesse in de camper voor de volgende periode:%0A%0A- Datum:%0A- Aantal personen:%0A%0AAlvast bedankt!">
+    Aanvraag doen
+  </a>
+
+  <a class="btn" href="https://wa.me/31613739139?text=Hallo!%20Ik%20heb%20interesse%20in%20de%20camper.%20Kunt%20u%20meer%20informatie%20geven?">
+    WhatsApp
+  </a>
+
+</div>
+
               <a class="btn" href="#beschikbaarheid">Beschikbaarheid</a>
               <a class="btn btn-ghost" href="#contact">Contact</a>
             </div>
@@ -439,18 +460,11 @@
         </div>
       </section>
 <section class="section">
-  <div class="photo-gallery">
-  <img src="front.jpeg" alt="Camper voorkant">
-     <img src="back.jpeg" alt="Camper achterkant">
-     <img src="inside01.jpeg" alt="Binnenkant 1">
-     <img src="inside02.jpeg" alt="Binnenkant 2">
-   <img src="inside03.jpeg" alt="Binnenkant 3">
-     <img src="bathroom.jpeg" alt="Douche en toilet">
-     <img src="kitchen.jpeg" alt="Keuken">
-         <img src="garage.jpeg" alt="Garage">
-</div>
   <div class="container">
     <span class="eyebrow">Over de camper</span>
+<p class="lead">
+  Vanaf €119,- per dag • Volledig uitgerust • Direct klaar voor vertrek
+</p>
     <h2>Adria Compact</h2>
     <p class="lead">
       Onze Adria Compact is een moderne en comfortabele camper, ideaal voor een ontspannen roadtrip vanuit Enschede.
@@ -802,20 +816,13 @@ else latest[key] = "unavailable";
     route();
     window.addEventListener("hashchange", route);
   </script>
-  <style>
-.photo-gallery{
-  display:grid;
-  grid-template-columns:repeat(2, 1fr);
-  gap:12px;
-  margin-bottom:20px;
-}
-
-.photo-gallery img{
-  width:100%;
-  height:180px;   /* kleiner maken */
-  object-fit:cover;
-  border-radius:12px;
-}
-</style>
+<a
+  class="floating-whatsapp"
+  href="https://wa.me/31613739123?text=Hallo!%20Ik%20heb%20interesse%20in%20de%20Adria%20Compact.%20Kunt%20u%20meer%20informatie%20geven?"
+  aria-label="WhatsApp ons"
+  title="WhatsApp ons"
+>
+  💬
+</a>
 </body>
 </html>
