@@ -672,79 +672,12 @@
     <footer class="footer">
       <div class="container footer-row">
         <div>© <span id="year"></span> Camperhuren-Twente</div>
-        <a href="#admin" style="color:var(--green);">Beheer</a>
       </div>
     </footer>
   </div>
 
-  <div id="adminView" class="hidden">
-    <div class="login-wrap" id="loginWrap">
-      <div class="login-card" id="loginCard">
-        <div class="brand" style="justify-content:center;margin-bottom:18px;">
-          <div class="brand-mark">CT</div>
-          <div>
-            <div class="brand-title">Camperhuren-Twente</div>
-            <div class="brand-sub">Beheeromgeving</div>
-          </div>
-        </div>
-
-        <h1 style="font-size:36px;margin-bottom:12px;">Beheer openen</h1>
-        <p class="small">Voer de beheercode in om de beschikbaarheid aan te passen.</p>
-
-        <form id="loginForm" class="stack">
-          <input class="input" id="pinInput" type="password" placeholder="Beheercode" />
-          <button class="btn" type="submit">Open beheer</button>
-        </form>
-
-        <p class="small">
-          Standaardcode: <strong>camper2026</strong><br>
-          Die kun je later bovenin de code aanpassen.
-        </p>
-      </div>
-
-      <div class="container hidden admin" id="adminPanel">
-        <div class="section-head">
-          <div>
-            <span class="eyebrow">Beheer</span>
-            <h2>Beschikbaarheid beheren</h2>
-            <p>Klik op een datum om te wisselen tussen beschikbaar, niet beschikbaar en niet ingesteld.</p>
-          </div>
-
-          <div class="toolbar">
-            <button class="btn btn-secondary" id="exportBtn" type="button">Export backup</button>
-            <label class="btn btn-ghost" for="importInput" style="cursor:pointer;">Import backup</label>
-            <input id="importInput" type="file" accept=".json,application/json" class="hidden" />
-            <button class="btn btn-ghost" id="logoutBtn" type="button">Afmelden</button>
-          </div>
-        </div>
-
-        <div class="legend" style="margin-bottom:14px;">
-          <span><i class="dot available"></i>Beschikbaar</span>
-          <span><i class="dot unavailable"></i>Niet beschikbaar</span>
-          <span><i class="dot unknown"></i>Niet ingesteld</span>
-        </div>
-
-        <div class="calendar-shell">
-          <div class="calendar-top">
-            <button class="icon-btn" id="admPrev">←</button>
-            <h3 id="admMonthLabel" style="margin:0;"></h3>
-            <button class="icon-btn" id="admNext">→</button>
-          </div>
-          <div class="weekdays" id="admWeekdays"></div>
-          <div class="calendar-grid" id="admGrid"></div>
-        </div>
-
-        <div class="notice">
-          Deze versie bewaart de planning in de browser. Voor gebruik op meerdere apparaten heb je later een online database nodig.
-        </div>
-      </div>
-    </div>
-  </div>
 
   <script>
-    const STORAGE_KEY = "camperhuren_twente_availability_v1";
-    const ADMIN_PIN = "camper2026";
-    const weekdays = ["Ma","Di","Wo","Do","Vr","Za","Zo"];
 
     function getData(){
       try {
