@@ -254,7 +254,7 @@
 
     .hero-actions{margin:24px 0 20px}
 
-    .photo-card,.info-card,.contact-box{
+    .photo-card,.calendar-shell,.info-card,.contact-box,.login-card{
       border-radius:var(--radius);
       border:1px solid var(--line);
       background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
@@ -301,12 +301,89 @@
       margin-bottom:18px;
     }
 
+    .calendar-shell{padding:18px}
+
+    .calendar-top{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      margin-bottom:16px;
+    }
+
     .calendar-embed{
       overflow:hidden;
       border-radius:22px;
       border:1px solid var(--line);
       background:rgba(255,255,255,.85);
       box-shadow:var(--shadow);
+    }
+
+    .icon-btn{
+      width:44px;
+      height:44px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.06);
+      color:var(--text);
+      cursor:pointer;
+    }
+
+    .weekdays,.calendar-grid{
+      display:grid;
+      grid-template-columns:repeat(7, minmax(0, 1fr));
+      gap:10px;
+    }
+
+    .weekdays{margin-bottom:10px}
+
+    .weekday{
+      text-align:center;
+      font-size:13px;
+      color:var(--muted);
+      padding:8px 0;
+    }
+
+    .day{
+      min-height:92px;
+      border-radius:18px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
+      padding:12px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      gap:12px;
+    }
+
+    .day.empty{
+      background:transparent;
+      border-style:dashed;
+      opacity:.22;
+    }
+
+    .day-num{font-weight:700}
+
+    .day-label{
+      align-self:flex-start;
+      border-radius:999px;
+      padding:7px 10px;
+      font-size:12px;
+      font-weight:700;
+    }
+
+    .day.available .day-label{background:rgba(119,214,156,.14);color:#98ecb9}
+    .day.unavailable .day-label{background:rgba(255,133,133,.14);color:#ffaaaa}
+    .day.unknown .day-label{background:rgba(255,255,255,.08);color:#d9e2dd}
+
+    .admin .day{
+      cursor:pointer;
+      transition:transform .12s ease, border-color .12s ease;
+    }
+
+    .admin .day:hover{
+      transform:translateY(-2px);
+      border-color:rgba(119,214,156,.32);
     }
 
     .legend span{
@@ -364,45 +441,75 @@
       align-items:center;
     }
 
+    .login-wrap{
+      min-height:100vh;
+      display:grid;
+      place-items:center;
+      padding:28px 16px;
+    }
+
+    .login-card{
+      width:min(520px,100%);
+      padding:28px;
+    }
+
+    .stack{
+      display:grid;
+      gap:12px;
+    }
+
+    .input{
+      width:100%;
+      padding:14px 16px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.06);
+      color:var(--text);
+    }
+
+    .small{
+      font-size:14px;
+      color:var(--muted);
+      line-height:1.6;
+    }
+
     @media (max-width:920px){
       .cards{grid-template-columns:1fr}
       .section-head,.nav{align-items:stretch;flex-direction:column}
       .photo{min-height:360px}
     }
+@media (max-width:640px){
+  .weekdays,.calendar-grid{gap:7px}
+  .day{min-height:80px;padding:10px;border-radius:14px}
+  .day-label{font-size:11px;padding:6px 8px}
+  .floating-whatsapp{
+    width:56px;
+    height:56px;
+    right:16px;
+    bottom:16px;
+    font-size:26px;
+  }
+}
 
-    @media (max-width:640px){
-      .weekdays,.calendar-grid{gap:7px}
-      .day{min-height:80px;padding:10px;border-radius:14px}
-      .day-label{font-size:11px;padding:6px 8px}
-      .floating-whatsapp{
-        width:56px;
-        height:56px;
-        right:16px;
-        bottom:16px;
-        font-size:26px;
+.dev-banner{
+  background:linear-gradient(135deg,#f4b860,#e39d3c);
+  color:#082114;
+  text-align:center;
+  padding:12px;
+  font-weight:700;
+  font-size:14px;
+  letter-spacing:0.5px;
+}
+      .photo-gallery{
+        grid-template-columns:1fr 1fr;
       }
-    }
-
-    .dev-banner{
-      background:linear-gradient(135deg,#f4b860,#e39d3c);
-      color:#082114;
-      text-align:center;
-      padding:12px;
-      font-weight:700;
-      font-size:14px;
-      letter-spacing:0.5px;
-    }
-
-    .photo-gallery{
-      grid-template-columns:1fr 1fr;
     }
   </style>
 </head>
 <body>
-  <div class="dev-banner">
-    🚧 Website nog in ontwikkeling – neem gerust contact op voor beschikbaarheid
-  </div>
-
+<div class="dev-banner">
+  🚧 Website nog in ontwikkeling – neem gerust contact op voor beschikbaarheid
+</div>
   <div id="publicView">
     <header class="site-header">
       <div class="container nav">
@@ -453,7 +560,7 @@
               06 13 93 71 23
             </a>
 
-            <a class="btn btn-whatsapp" href="https://wa.me/31613937123?text=Hallo!%20Ik%20heb%20interesse%20in%20de%20camper.%20Kunt%20u%20meer%20informatie%20geven?">
+            <a class="btn btn-whatsapp" href="https://wa.me/31613937123?text=Hallo!%20Ik%20heb%20interesse%20in%20de%20camper%20voor%20de%20periode%20van%20....%20Is%20deze%20nog%20beschikbaar?">
               WhatsApp
             </a>
           </div>
@@ -465,7 +572,7 @@
           <div style="margin-top:18px;">
             <h3>Adria Compact</h3>
             <p class="lead">
-              Een nette, moderne, compacte camper. Super geschikt voor ontspannen roadtrips Biedt alle vrijheid. Groot rijgemak met een kleine draaicirkel. 
+              Een nette, moderne, compacte camper. Super geschikt voor ontspannen roadtrips. Biedt alle vrijheid. Groot rijgemak met een kleine draaicirkel. 
             </p>
           </div>
         </div>
@@ -478,14 +585,14 @@
           </button>
 
           <div id="gallery" class="photo-gallery hidden">
-            <img src="front.jpeg" onclick="openLightbox(this.src)" alt="Voorkant camper">
-            <img src="back.jpeg" onclick="openLightbox(this.src)" alt="Achterkant camper">
-            <img src="inside01.jpeg" onclick="openLightbox(this.src)" alt="Binnenkant camper 1">
-            <img src="inside02.jpeg" onclick="openLightbox(this.src)" alt="Binnenkant camper 2">
-            <img src="inside03.jpeg" onclick="openLightbox(this.src)" ="Binnenkant camper 3">
-            <img src="bathroom.jpeg" onclick="openLightbox(this.src)" alt="Badkamer camper">
-            <img src="kitchen.jpeg" onclick="openLightbox(this.src)" alt="Keuken camper">
-            <img src="garage.jpeg" onclick="openLightbox(this.src)" alt="Opbergruimte camper">
+            <img src="front.jpeg" alt="Voorkant camper">
+            <img src="back.jpeg" alt="Achterkant camper">
+            <img src="inside01.jpeg" alt="Binnenkant camper 1">
+            <img src="inside02.jpeg" alt="Binnenkant camper 2">
+            <img src="inside03.jpeg" alt="Binnenkant camper 3">
+            <img src="bathroom.jpeg" alt="Badkamer camper">
+            <img src="kitchen.jpeg" alt="Keuken camper">
+            <img src="garage.jpeg" alt="Opbergruimte camper">
           </div>
 
           <span class="eyebrow">Over de camper</span>
@@ -531,11 +638,11 @@
           </div>
 
           <div class="calendar-embed">
-            <iframe 
-              src="https://calendar.google.com/calendar/embed?src=camperhurentwente%40gmail.com&ctz=Europe%2FAmsterdam&hl=nl&mode=MONTH&showTitle=0&showPrint=0&showTabs=0&showCalendars=0&showTz=0&color=%23e57373"
-              style="border:0; width:100%; height:700px;"
-              loading="lazy">
-            </iframe>
+<iframe 
+  src="https://calendar.google.com/calendar/embed?src=camperhurentwente%40gmail.com&ctz=Europe%2FAmsterdam&hl=nl&mode=MONTH&showTitle=0&showPrint=0&showTabs=0&showCalendars=0&showTz=0&color=%23e57373"
+  style="border:0; width:100%; height:700px;"
+  loading="lazy">
+</iframe>
           </div>
 
           <div class="notice">
@@ -569,51 +676,214 @@
     </footer>
   </div>
 
+
   <script>
-  const menuDropdown = document.getElementById("menuDropdown");
 
-  function toggleGallery(){
-    const gallery = document.getElementById("gallery");
-    gallery.classList.toggle("hidden");
-  }
-
-  function toonTelefoonnummer(){
-    const telefoonnummerLink = document.getElementById("telefoonnummerLink");
-    telefoonnummerLink.classList.remove("hidden");
-  }
-
-  function toggleMenu(){
-    menuDropdown.classList.toggle("show");
-  }
-
-  document.addEventListener("click", function(e){
-    const menuWrap = document.querySelector(".menu-wrap");
-    if(menuWrap && !menuWrap.contains(e.target)){
-      menuDropdown.classList.remove("show");
+    function getData(){
+      try {
+        return JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
+      } catch {
+        return {};
+      }
     }
-  });
 
-  document.addEventListener("keydown", function(e){
-    if(e.key === "Escape"){
-      menuDropdown.classList.remove("show");
+    function setData(data){
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
     }
-  });
 
-  document.getElementById("year").textContent = new Date().getFullYear();
+    function keyFor(year, month, day){
+      return year + "-" + String(month + 1).padStart(2, "0") + "-" + String(day).padStart(2, "0");
+    }
 
-  function openLightbox(src){
-    const lightbox = document.getElementById("lightbox");
-    const img = document.getElementById("lightboxImg");
+    function monthName(date){
+      return date.toLocaleDateString("nl-NL", { month:"long", year:"numeric" });
+    }
 
-    img.src = src;
-    lightbox.classList.remove("hidden");
-  }
+    function addWeekdays(target){
+      target.innerHTML = "";
+      weekdays.forEach(d => {
+        const el = document.createElement("div");
+        el.className = "weekday";
+        el.textContent = d;
+        target.appendChild(el);
+      });
+    }
 
-  function closeLightbox(){
-    const lightbox = document.getElementById("lightbox");
-    lightbox.classList.add("hidden");
-  }
-</script>
+    function statusLabel(status){
+      if(status === "unavailable") return "Gereserveerd";
+      return "Beschikbaar";
+    }
+
+    function makeDay(day, status, clickable, onClick){
+      const el = document.createElement(clickable ? "button" : "div");
+      if(clickable) el.type = "button";
+      el.className = "day " + (status === "unavailable" ? "unavailable" : "available");
+
+      const num = document.createElement("div");
+      num.className = "day-num";
+      num.textContent = day;
+
+      const label = document.createElement("div");
+      label.className = "day-label";
+      label.textContent = statusLabel(status);
+
+      el.appendChild(num);
+      el.appendChild(label);
+
+      if(clickable && onClick) el.addEventListener("click", onClick);
+      return el;
+    }
+
+    function renderCalendar(gridEl, labelEl, currentDate, clickable){
+      const data = getData();
+      const year = currentDate.getFullYear();
+      const month = currentDate.getMonth();
+      const first = new Date(year, month, 1);
+      const last = new Date(year, month + 1, 0);
+      const firstWeekday = (first.getDay() + 6) % 7;
+
+      labelEl.textContent = monthName(currentDate);
+      gridEl.innerHTML = "";
+
+      for(let i = 0; i < firstWeekday; i++){
+        const empty = document.createElement("div");
+        empty.className = "day empty";
+        gridEl.appendChild(empty);
+      }
+
+      for(let day = 1; day <= last.getDate(); day++){
+        const key = keyFor(year, month, day);
+        const status = data[key];
+        const cell = makeDay(day, status, clickable, () => {
+          const latest = getData();
+          if(latest[key] === "unavailable") {
+            delete latest[key];
+          } else {
+            latest[key] = "unavailable";
+          }
+          setData(latest);
+          renderAll();
+        });
+        gridEl.appendChild(cell);
+      }
+    }
+
+    const publicView = document.getElementById("publicView");
+    const adminView = document.getElementById("adminView");
+    const loginCard = document.getElementById("loginCard");
+    const adminPanel = document.getElementById("adminPanel");
+    const loginForm = document.getElementById("loginForm");
+    const pinInput = document.getElementById("pinInput");
+    const admWeekdays = document.getElementById("admWeekdays");
+    const admGrid = document.getElementById("admGrid");
+    const admMonthLabel = document.getElementById("admMonthLabel");
+    const menuDropdown = document.getElementById("menuDropdown");
+
+    let admDate = new Date();
+    admDate.setDate(1);
+
+    function renderAll(){
+      if(!admWeekdays.innerHTML) addWeekdays(admWeekdays);
+      renderCalendar(admGrid, admMonthLabel, admDate, true);
+    }
+
+    function route(){
+      const isAdmin = location.hash === "#admin";
+      publicView.classList.toggle("hidden", isAdmin);
+      adminView.classList.toggle("hidden", !isAdmin);
+
+      if(isAdmin){
+        adminPanel.classList.add("hidden");
+        loginCard.classList.remove("hidden");
+      }
+    }
+
+    function toggleGallery(){
+      const gallery = document.getElementById("gallery");
+      gallery.classList.toggle("hidden");
+    }
+
+    function toonTelefoonnummer(){
+      const telefoonnummerLink = document.getElementById("telefoonnummerLink");
+      telefoonnummerLink.classList.remove("hidden");
+    }
+
+    function toggleMenu(){
+      menuDropdown.classList.toggle("show");
+    }
+
+    document.getElementById("admPrev").addEventListener("click", () => {
+      admDate = new Date(admDate.getFullYear(), admDate.getMonth() - 1, 1);
+      renderAll();
+    });
+
+    document.getElementById("admNext").addEventListener("click", () => {
+      admDate = new Date(admDate.getFullYear(), admDate.getMonth() + 1, 1);
+      renderAll();
+    });
+
+    loginForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      if(pinInput.value === ADMIN_PIN){
+        loginCard.classList.add("hidden");
+        adminPanel.classList.remove("hidden");
+        renderAll();
+      } else {
+        alert("Onjuiste beheercode.");
+      }
+    });
+
+    document.getElementById("logoutBtn").addEventListener("click", () => {
+      pinInput.value = "";
+      adminPanel.classList.add("hidden");
+      loginCard.classList.remove("hidden");
+    });
+
+    document.getElementById("exportBtn").addEventListener("click", () => {
+      const data = getData();
+      const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "camperhuren-twente-backup.json";
+      a.click();
+      URL.revokeObjectURL(url);
+    });
+
+    document.getElementById("importInput").addEventListener("change", async (e) => {
+      const file = e.target.files && e.target.files[0];
+      if(!file) return;
+
+      try{
+        const text = await file.text();
+        const data = JSON.parse(text);
+        setData(data);
+        renderAll();
+        alert("Backup geïmporteerd.");
+      } catch {
+        alert("Dit bestand kon niet worden ingelezen.");
+      }
+    });
+
+    document.addEventListener("click", function(e){
+      const menuWrap = document.querySelector(".menu-wrap");
+      if(menuWrap && !menuWrap.contains(e.target)){
+        menuDropdown.classList.remove("show");
+      }
+    });
+
+    document.addEventListener("keydown", function(e){
+      if(e.key === "Escape"){
+        menuDropdown.classList.remove("show");
+      }
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+    addWeekdays(admWeekdays);
+    renderAll();
+    route();
+    window.addEventListener("hashchange", route);
+  </script>
 
   <a
     class="floating-whatsapp"
@@ -623,23 +893,5 @@
   >
     ✆
   </a>
-<div id="lightbox" class="hidden" onclick="closeLightbox()" style="
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background:rgba(0,0,0,0.9);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  z-index:10000;
-">
-  <img id="lightboxImg" src="" style="
-    max-width:90%;
-    max-height:90%;
-    border-radius:12px;
-  ">
-</div>
 </body>
 </html>
