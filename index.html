@@ -478,14 +478,14 @@
           </button>
 
           <div id="gallery" class="photo-gallery hidden">
-            <img src="front.jpeg" alt="Voorkant camper">
-            <img src="back.jpeg" alt="Achterkant camper">
-            <img src="inside01.jpeg" alt="Binnenkant camper 1">
-            <img src="inside02.jpeg" alt="Binnenkant camper 2">
-            <img src="inside03.jpeg" alt="Binnenkant camper 3">
-            <img src="bathroom.jpeg" alt="Badkamer camper">
-            <img src="kitchen.jpeg" alt="Keuken camper">
-            <img src="garage.jpeg" alt="Opbergruimte camper">
+            <img src="front.jpeg" onclick="openLightbox(this.src)" alt="Voorkant camper">
+            <img src="back.jpeg" onclick="openLightbox(this.src)" alt="Achterkant camper">
+            <img src="inside01.jpeg" onclick="openLightbox(this.src)" alt="Binnenkant camper 1">
+            <img src="inside02.jpeg" onclick="openLightbox(this.src)" alt="Binnenkant camper 2">
+            <img src="inside03.jpeg" onclick="openLightbox(this.src)" ="Binnenkant camper 3">
+            <img src="bathroom.jpeg" onclick="openLightbox(this.src)" alt="Badkamer camper">
+            <img src="kitchen.jpeg" onclick="openLightbox(this.src)" alt="Keuken camper">
+            <img src="garage.jpeg" onclick="openLightbox(this.src)" alt="Opbergruimte camper">
           </div>
 
           <span class="eyebrow">Over de camper</span>
@@ -570,37 +570,50 @@
   </div>
 
   <script>
-    const menuDropdown = document.getElementById("menuDropdown");
+  const menuDropdown = document.getElementById("menuDropdown");
 
-    function toggleGallery(){
-      const gallery = document.getElementById("gallery");
-      gallery.classList.toggle("hidden");
+  function toggleGallery(){
+    const gallery = document.getElementById("gallery");
+    gallery.classList.toggle("hidden");
+  }
+
+  function toonTelefoonnummer(){
+    const telefoonnummerLink = document.getElementById("telefoonnummerLink");
+    telefoonnummerLink.classList.remove("hidden");
+  }
+
+  function toggleMenu(){
+    menuDropdown.classList.toggle("show");
+  }
+
+  document.addEventListener("click", function(e){
+    const menuWrap = document.querySelector(".menu-wrap");
+    if(menuWrap && !menuWrap.contains(e.target)){
+      menuDropdown.classList.remove("show");
     }
+  });
 
-    function toonTelefoonnummer(){
-      const telefoonnummerLink = document.getElementById("telefoonnummerLink");
-      telefoonnummerLink.classList.remove("hidden");
+  document.addEventListener("keydown", function(e){
+    if(e.key === "Escape"){
+      menuDropdown.classList.remove("show");
     }
+  });
 
-    function toggleMenu(){
-      menuDropdown.classList.toggle("show");
-    }
+  document.getElementById("year").textContent = new Date().getFullYear();
 
-    document.addEventListener("click", function(e){
-      const menuWrap = document.querySelector(".menu-wrap");
-      if(menuWrap && !menuWrap.contains(e.target)){
-        menuDropdown.classList.remove("show");
-      }
-    });
+  function openLightbox(src){
+    const lightbox = document.getElementById("lightbox");
+    const img = document.getElementById("lightboxImg");
 
-    document.addEventListener("keydown", function(e){
-      if(e.key === "Escape"){
-        menuDropdown.classList.remove("show");
-      }
-    });
+    img.src = src;
+    lightbox.classList.remove("hidden");
+  }
 
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+  function closeLightbox(){
+    const lightbox = document.getElementById("lightbox");
+    lightbox.classList.add("hidden");
+  }
+</script>
 
   <a
     class="floating-whatsapp"
@@ -610,5 +623,23 @@
   >
     ✆
   </a>
+<div id="lightbox" class="hidden" onclick="closeLightbox()" style="
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.9);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:10000;
+">
+  <img id="lightboxImg" src="" style="
+    max-width:90%;
+    max-height:90%;
+    border-radius:12px;
+  ">
+</div>
 </body>
 </html>
