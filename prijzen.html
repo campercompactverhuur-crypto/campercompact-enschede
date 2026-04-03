@@ -44,6 +44,19 @@
       box-shadow:0 12px 30px rgba(0,0,0,.08);
       margin-top:20px;
     }
+.prijzen-lijst {
+  padding-left: 20px;
+  line-height: 1.8;
+}
+
+.prijzen-lijst li {
+  margin-bottom: 8px;
+}
+
+.prijzen-lijst small {
+  color: #7a736b;
+  font-size: 13px;
+}
   </style>
 </head>
 <body>
@@ -51,8 +64,29 @@
     <a class="btn" href="index.html">← Terug</a>
     <h1>Prijzen</h1>
     <div class="price-card">
-      <p><strong>Vanaf €119,- per dag</strong></p>
-      <p>Hier kun je later je seizoensprijzen, borg en extra kosten invullen.</p>
+<ul class="prijzen-lijst">
+  <li><strong>Vanaf €119,- per dag</strong></li>
+
+  <li>
+    <strong>Voorseizoen</strong> 
+    <small>(1 april t/m 14 juni)</small> — €139,- per dag
+  </li>
+
+  <li>
+    <strong>Hoofdseizoen</strong> 
+    <small>(15 juni t/m 6 september)</small> — €159,- per dag
+  </li>
+
+  <li>
+    <strong>Naseizoen</strong> 
+    <small>(7 september t/m 31 oktober)</small> — €139,- per dag
+  </li>
+
+  <li>
+    <strong>Overig</strong> 
+    <small>(1 november t/m 31 maart)</small> — €119,- per dag
+  </li>
+</ul>
     </div>
   </div>
 </body>
