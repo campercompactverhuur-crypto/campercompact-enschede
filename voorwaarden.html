@@ -1,190 +1,403 @@
-<div class="card">
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Huurvoorwaarden | Camperhuren-Twente</title>
 
-  <div class="section">
-    <h2>Tarieven</h2>
-    <div class="price-grid">
-      <div class="price-box">
-        <span class="price-label">Prijs per dag vanaf</span>
-        <span class="price-value">€119,-</span>
-      </div>
-      <div class="price-box">
-        <span class="price-label">Prijs per dag voorseizoen</span>
-        <span class="price-value">€139,-</span>
-      </div>
-      <div class="price-box">
-        <span class="price-label">Prijs per dag hoogseizoen</span>
-        <span class="price-value">€159,-</span>
-      </div>
+  <style>
+    :root{
+      --bg:#fffaf2;
+      --card:#ffffff;
+      --text:#2b2b2b;
+      --muted:#6e6e6e;
+      --accent:#f4b860;
+      --accent-dark:#082114;
+      --line:#eee3d1;
+      --shadow:0 12px 30px rgba(0,0,0,.08);
+      --radius:18px;
+    }
+
+    *{
+      box-sizing:border-box;
+    }
+
+    body{
+      margin:0;
+      font-family:Arial, Helvetica, sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.7;
+    }
+
+    .container{
+      width:min(980px, calc(100% - 32px));
+      margin:0 auto;
+      padding:32px 0 56px;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:12px 18px;
+      border-radius:12px;
+      background:var(--accent);
+      color:var(--accent-dark);
+      text-decoration:none;
+      font-weight:700;
+      margin-bottom:24px;
+    }
+
+    .hero{
+      margin-bottom:24px;
+    }
+
+    h1{
+      margin:0 0 10px;
+      font-size:clamp(2rem, 4vw, 2.8rem);
+      line-height:1.15;
+    }
+
+    .intro{
+      margin:0;
+      color:var(--muted);
+      max-width:760px;
+    }
+
+    .card{
+      background:var(--card);
+      border-radius:var(--radius);
+      padding:28px;
+      box-shadow:var(--shadow);
+      margin-top:22px;
+    }
+
+    h2{
+      margin:0 0 14px;
+      font-size:1.45rem;
+    }
+
+    h3{
+      margin:22px 0 8px;
+      font-size:1.05rem;
+    }
+
+    p{
+      margin:0 0 14px;
+    }
+
+    ul{
+      margin:0 0 14px;
+      padding-left:20px;
+    }
+
+    li{
+      margin-bottom:8px;
+    }
+
+    .price-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+      gap:14px;
+      margin-top:18px;
+    }
+
+    .price-box{
+      background:#fff7ea;
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:18px;
+    }
+
+    .price-label{
+      display:block;
+      font-size:.95rem;
+      color:var(--muted);
+      margin-bottom:6px;
+    }
+
+    .price-value{
+      font-size:1.5rem;
+      font-weight:700;
+    }
+
+    .section{
+      padding-top:10px;
+      border-top:1px solid var(--line);
+      margin-top:20px;
+    }
+
+    .section:first-of-type{
+      border-top:none;
+      margin-top:0;
+      padding-top:0;
+    }
+
+    .note{
+      background:#fff7ea;
+      border-left:4px solid var(--accent);
+      padding:14px 16px;
+      border-radius:12px;
+      margin-top:12px;
+    }
+
+    .small{
+      color:var(--muted);
+      font-size:.95rem;
+    }
+
+    .footer-note{
+      margin-top:24px;
+      font-size:.95rem;
+      color:var(--muted);
+    }
+
+    @media (max-width: 640px){
+      .card{
+        padding:22px 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <a class="btn" href="index.html">← Terug</a>
+
+    <div class="hero">
+      <h1>Huurvoorwaarden</h1>
+      <p class="intro">
+        Hieronder vind je onze belangrijkste afspraken voor het huren van een camper. Zo weet je vooraf precies waar je aan toe bent rondom prijzen, borg, schoonmaak, schade, gebruik en annulering.
+      </p>
     </div>
-    <p class="small" style="margin-top:14px;">
-      Definitieve prijzen en beschikbaarheid worden bevestigd bij reservering.
-    </p>
-  </div>
 
-  <div class="section">
-    <h2>Borg en eigen risico</h2>
+    <div class="card">
+      <div class="section">
+        <h2>Tarieven</h2>
+        <div class="price-grid">
+          <div class="price-box">
+            <span class="price-label">Prijs per dag vanaf</span>
+            <span class="price-value">€119,-</span>
+          </div>
+          <div class="price-box">
+            <span class="price-label">Prijs per dag voorseizoen</span>
+            <span class="price-value">€139,-</span>
+          </div>
+          <div class="price-box">
+            <span class="price-label">Prijs per dag hoogseizoen</span>
+            <span class="price-value">€159,-</span>
+          </div>
+        </div>
+        <p class="small" style="margin-top:14px;">
+          Definitieve prijzen, beschikbaarheid en eventuele extra opties worden altijd bevestigd bij reservering.
+        </p>
+      </div>
 
-    <p>
-      Voor aanvang van de huurperiode betaal je een borg. Deze dient als zekerheid voor schade, schoonmaakkosten, ontbrekende inventaris, brandstoftekort, te laat inleveren en eventuele boetes of tolheffingen.
-    </p>
+      <div class="section">
+        <h2>Borg en eigen risico</h2>
 
-    <p>
-      Wordt de camper netjes, schoon en volgens afspraak ingeleverd, dan wordt de borg in principe binnen 7 dagen teruggestort. Indien er nog controles nodig zijn of externe kosten (zoals boetes) afgewacht moeten worden, kan deze termijn worden verlengd.
-    </p>
+        <h3>Hoe werkt de borg?</h3>
+        <p>
+          Uiterlijk drie weken voor vertrek betaal je de borg. Deze dient als zekerheid voor eventuele schade, extra schoonmaakkosten, ontbrekende inventaris, boetes, tolheffingen, brandstoftekort of andere kosten die tijdens of na de huurperiode aan het licht komen.
+        </p>
+        <p>
+          Wordt de camper op tijd, schoon en in dezelfde staat ingeleverd als bij vertrek, dan wordt de borg in principe binnen 7 dagen teruggestort. Indien er aanleiding is voor controle, schadebeoordeling of het afwachten van externe kosten, kan deze termijn worden verlengd.
+        </p>
+        <p>
+          Eventuele inhoudingen op de borg worden altijd duidelijk gespecificeerd. Mocht het totaalbedrag hoger zijn dan de borg, dan kan het resterende bedrag aanvullend in rekening worden gebracht.
+        </p>
+        <p>
+          Let op: kosten zoals boetes of tolheffingen die later binnenkomen, kunnen ook na terugbetaling van de borg alsnog worden doorbelast.
+        </p>
 
-    <p>
-      Eventuele inhoudingen worden altijd duidelijk gespecificeerd. Zijn de kosten hoger dan de borg, dan kan het resterende bedrag aanvullend in rekening worden gebracht.
-    </p>
+        <h3>Wat is het verschil tussen borg en eigen risico?</h3>
+        <p>
+          De borg is een vooruitbetaald zekerheidsbedrag. Het eigen risico is het deel van de schade dat voor rekening van de huurder blijft wanneer er tijdens de huurperiode schade ontstaat. Bij schade wordt het eigen risico verrekend met de betaalde borg.
+        </p>
+        <p>
+          Voorbeeld: bedraagt de borg €1.000 en is de schade €800, dan wordt €800 verrekend. Is de schade hoger dan het geldende eigen risico, dan betaal je maximaal het bedrag van dat eigen risico, tenzij sprake is van uitsluitingen of schade die niet door de verzekering wordt gedekt.
+        </p>
 
-    <p>
-      Let op: kosten die later binnenkomen (zoals boetes of tol) kunnen ook na terugbetaling van de borg alsnog worden doorbelast.
-    </p>
+        <h3>Eigen risico per schadegeval</h3>
+        <p>
+          Het eigen risico geldt per afzonderlijk schadegeval. Ontstaan er tijdens één huurperiode meerdere losse schades, dan kan het eigen risico dus meerdere keren van toepassing zijn.
+        </p>
+        <p>
+          <strong>Schade aan het interieur wordt nimmer door de verzekering vergoed en komt daarmee ten aller tijde voor rekening van de huurder.</strong>
+        </p>
 
-    <h3>Eigen risico</h3>
-    <p>
-      Bij schade geldt een eigen risico per schadegeval. Dit bedrag wordt verrekend met de borg. Bij meerdere schades tijdens één huurperiode geldt dit per incident.
-    </p>
+        <div class="note">
+          De borg dekt niet alleen schade, maar bijvoorbeeld ook extra schoonmaakkosten, een niet-geledigde toiletcassette, te laat inleveren, brandstoftekort, ontbrekende spullen en andere kosten die voortvloeien uit het niet naleven van de huurafspraken.
+        </div>
+      </div>
 
-    <p>
-      <strong>Schade aan het interieur wordt nimmer door de verzekering vergoed en komt daarmee ten aller tijde voor rekening van de huurder.</strong>
-    </p>
+      <div class="section">
+        <h2>Schoonmaken bij inleveren</h2>
 
-    <div class="note">
-      De borg dekt niet alleen schade, maar ook extra kosten zoals schoonmaak, ontbrekende spullen of het niet naleven van de afspraken.
+        <h3>Buitenkant</h3>
+        <p>
+          De buitenzijde van de camper wordt door ons gereinigd. Daarmee voorkomen we schade die kan ontstaan door verkeerd wassen of het gebruik van ongeschikte middelen. We vragen je wel om tijdelijke vignetten van bijvoorbeeld Oostenrijk of Slovenië, die niet meer geldig zijn, te verwijderen. Nog geldige vignetten mogen blijven zitten. De milieustickers voor Duitsland en Frankrijk <strong>moeten</strong> blijven zitten.
+        </p>
+
+        <h3>Interieur</h3>
+        <ul>
+          <li>Het toilet moet volledig schoon zijn en de toiletcassette moet leeg zijn.</li>
+          <li>Het keukenblok, het aanrecht en de kastjes moeten schoon en vrij van etensresten zijn.</li>
+          <li>De koelkast moet leeg, schoon en droog worden achtergelaten.</li>
+          <li>Het interieur dient in dezelfde nette en schone staat te worden ingeleverd als waarin de camper is opgehaald. Indien dit niet het geval is, brengen wij schoonmaakkosten in rekening.</li>
+          <li>De vuilwatertank moet leeg zijn.</li>
+          <li>Overige afvalresten moeten verwijderd zijn.</li>
+        </ul>
+
+        <h3>Optionele eindschoonmaak</h3>
+        <p>
+          Wil je de eindschoonmaak liever door ons laten verzorgen, dan kun je deze bijboeken voor <strong>€200,-</strong>. Dat scheelt tijd bij terugkomst en voorkomt discussie over de staat van het interieur.
+        </p>
+
+        <p>
+          Wordt het voertuig niet schoon ingeleverd terwijl geen eindschoonmaak is bijgeboekt, dan brengen wij <strong>€275,-</strong> in rekening.
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>Wat te doen bij schade of een ongeval</h2>
+
+        <h3>Bij schade aan de camper</h3>
+        <ul>
+          <li>Zorg eerst voor veiligheid van jezelf, je passagiers en andere weggebruikers.</li>
+          <li>Meld schade zo snel mogelijk bij ons, bij voorkeur per e-mail of telefonisch.</li>
+          <li>Maak duidelijke detailfoto’s én overzichtsfoto’s van de schade en de situatie.</li>
+          <li>Kun je veilig verder reizen, dan mag de vakantie doorgaans worden voortgezet in overleg met ons.</li>
+          <li>Is het voertuig niet meer veilig of niet meer rijdbaar, neem dan contact op met de alarmcentrale die op de groene kaart of verzekeringspapieren staat vermeld.</li>
+        </ul>
+
+        <h3>Bij een ongeval</h3>
+        <ul>
+          <li>Breng eerst alle betrokkenen in veiligheid en bel zo nodig 112.</li>
+          <li>Verlaat de plaats van het ongeval niet zonder gegevens uit te wisselen.</li>
+          <li>Zet het voertuig veilig weg als dat noodzakelijk is en gebruik een gevarendriehoek.</li>
+          <li>Maak foto’s van de situatie, voertuigen, schade, remsporen en eventuele relevante omstandigheden.</li>
+          <li>Noteer naam, adres, telefoonnummer en kenteken van eventuele getuigen.</li>
+          <li>Vul altijd een schadeformulier in en schakel waar nodig de lokale politie in.</li>
+        </ul>
+
+        <p>
+          Reparaties mogen nooit zonder voorafgaand overleg worden uitgevoerd, behalve wanneer sprake is van een kleine, strikt noodzakelijke reparatie.
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>Pech en reparaties</h2>
+        <p>
+          Ontstaat er tijdens de reis een storing of schade, neem dan altijd zo snel mogelijk contact met ons op.
+        </p>
+        <ul>
+          <li>Reparaties mogen alleen in overleg met ons worden uitgevoerd.</li>
+          <li>Kleine, noodzakelijke reparaties tot €50 mogen zonder overleg worden uitgevoerd.</li>
+          <li>Voor grotere reparaties is altijd vooraf toestemming nodig.</li>
+          <li>In het buitenland kan gebruik worden gemaakt van de hulpdienst zoals vermeld op de groene kaart.</li>
+          <li>Schade door verkeerd gebruik, zoals het tanken van de verkeerde brandstof, is volledig voor rekening van de huurder.</li>
+        </ul>
+        <p>
+          Wij zijn niet aansprakelijk voor persoonlijke schade, verlies van eigendommen of het tijdelijk niet kunnen voortzetten van de reis.
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>Ophalen en inleveren</h2>
+        <ul>
+          <li>Tijdstip van ophalen en inleveren van de camper is in overleg.</li>
+          <li>De camper wordt met een volle tank meegegeven en moet ook weer met volle tank worden ingeleverd.</li>
+          <li>De vuilwatertank en toiletcassette moeten bij terugkomst geleegd zijn.</li>
+          <li>Bij uitgifte en inname geldt het overdrachtsformulier als uitgangspunt voor de staat van het voertuig, aanwezige inventaris en zichtbare schade.</li>
+        </ul>
+
+        <p>
+          Later ophalen of eerder terugbrengen geeft geen recht op restitutie van (een deel van) de huursom. Bij te laat inleveren kunnen extra kosten in rekening worden gebracht.
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>Gebruik van de camper</h2>
+        <ul>
+          <li>De camper mag uitsluitend worden gebruikt voor recreatief vakantiegebruik.</li>
+          <li>Gebruik voor illegale activiteiten, onderverhuur of ander oneigenlijk gebruik is niet toegestaan.</li>
+          <li>Roken in de camper is verboden.</li>
+          <li>Huisdieren zijn niet toegestaan.</li>
+          <li>De camper mag alleen worden bestuurd door de bestuurder(s) die in de huurovereenkomst zijn vermeld.</li>
+          <li>Iedere bestuurder moet beschikken over een geldig rijbewijs en voldoende rijvaardigheid hebben om de camper veilig te besturen.</li>
+          <li>Het maximaal toegestane aantal inzittenden en gordelplaatsen mag niet worden overschreden.</li>
+          <li>Het is niet toegestaan de camper te overbeladen, off-road te gebruiken of aan te passen met stickers, versieringen of andere wijzigingen.</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Kilometers, brandstof en bijkomende kosten</h2>
+        <ul>
+          <li>Er worden geen kosten per kilometer berekend; je rijdt dus vrij tijdens de huurperiode.</li>
+          <li>Brandstof, boetes, tol, verkeersheffingen en kosten door verkeerd gebruik zijn voor rekening van de huurder.</li>
+          <li>Wordt de camper niet afgetankt teruggebracht, dan brengen wij de brandstofkosten plus servicekosten van <strong>€50,-</strong> in rekening.</li>
+        </ul>
+
+        <p>
+          Tolheffingen, boetes of naheffingen die pas na de huurperiode worden ontvangen, kunnen alsnog bij de huurder worden gedeclareerd.
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>Reservering en betaling</h2>
+        <ul>
+          <li>Na definitieve reservering vragen wij per direct een aanbetaling van <strong>€500,-</strong>.</li>
+          <li>Het resterende huurbedrag moet uiterlijk 1 week voor vertrek zijn voldaan.</li>
+          <li>De borg moet uiterlijk vóór vertrek op onze rekening staan.</li>
+          <li>Een reservering is pas definitief na bevestiging en ontvangst van de afgesproken betaling.</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Annulering</h2>
+        <p>
+          Bij annulering gelden de volgende kosten:
+        </p>
+        <ul>
+          <li>meer dan 8 weken voor vertrek: <strong>25%</strong> van de huursom</li>
+          <li>8 tot 4 weken voor vertrek: <strong>60%</strong> van de huursom</li>
+          <li>4 tot 2 weken voor vertrek: <strong>80%</strong> van de huursom</li>
+          <li>binnen 2 weken voor vertrek: <strong>100%</strong> van de huursom</li>
+        </ul>
+        <p>
+          Wij adviseren huurders om zelf een annuleringsverzekering en reisverzekering af te sluiten.
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>Aansprakelijkheid en schadebehandeling</h2>
+        <ul>
+          <li>De huurder is verantwoordelijk voor zorgvuldig gebruik van de camper, inventaris en accessoires.</li>
+          <li>Schade die niet door de verzekering wordt vergoed, of ontstaat door nalatigheid, verkeerd gebruik, roekeloosheid of overtreding van de voorwaarden, komt volledig voor rekening van de huurder.</li>
+          <li>Bij bewust verzwijgen van schade kunnen aanvullende kosten voor expertise en afhandeling worden doorberekend.</li>
+          <li>Persoonlijke eigendommen en meegevoerde goederen vallen onder verantwoordelijkheid van de huurder.</li>
+        </ul>
+
+        <div class="note">
+          Behandel de camper alsof deze van jezelf is. Zorgvuldige omgang voorkomt schade, extra kosten en teleurstelling achteraf.
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Slotbepalingen</h2>
+        <p>
+          Op deze huurovereenkomst en het gebruik van onze camper is Nederlands recht van toepassing. Door een reservering te maken en de camper in ontvangst te nemen, verklaart de huurder zich akkoord met deze voorwaarden en met de afspraken uit de huurovereenkomst en het overdrachtsformulier.
+        </p>
+        <p>
+          Persoonsgegevens worden uitsluitend gebruikt voor reservering, overeenkomst, administratie en communicatie rondom de verhuur en worden zorgvuldig behandeld.
+        </p>
+      </div>
+
+      <p class="footer-note">
+        Heb je vragen over deze voorwaarden of wil je vooraf iets afstemmen? Neem dan gerust contact met ons op.
+      </p>
     </div>
   </div>
 
-  <div class="section">
-    <h2>Schoonmaken bij inleveren</h2>
-
-    <h3>Buitenkant</h3>
-    <p>
-      De buitenzijde wordt door ons gereinigd om schade te voorkomen. Verwijder wel tijdelijke vignetten (bijv. Oostenrijk of Slovenië). Geldige stickers mogen blijven zitten. Milieustickers voor Duitsland en Frankrijk <strong>moeten</strong> blijven zitten.
-    </p>
-
-    <h3>Interieur</h3>
-    <ul>
-      <li>Toilet en toiletcassette schoon en leeg.</li>
-      <li>Keuken, kastjes en aanrecht schoon en vrij van etensresten.</li>
-      <li>Koelkast leeg, schoon en droog.</li>
-      <li>Interieur in dezelfde nette staat als bij vertrek.</li>
-      <li>Vuilwatertank leeg en afval verwijderd.</li>
-    </ul>
-
-    <p>
-      Indien de camper niet schoon wordt ingeleverd, brengen wij <strong>€275,-</strong> schoonmaakkosten in rekening.
-    </p>
-
-    <p>
-      Wil je dit liever uitbesteden? Dan kun je vooraf eindschoonmaak bijboeken voor <strong>€200,-</strong>.
-    </p>
-  </div>
-
-  <div class="section">
-    <h2>Ophalen en inleveren</h2>
-    <ul>
-      <li>Tijdstip van ophalen en inleveren in overleg.</li>
-      <li>Camper wordt met volle tank meegegeven en moet vol retour.</li>
-      <li>Vuilwatertank en toiletcassette moeten geleegd zijn.</li>
-      <li>Overdrachtsformulier is leidend voor staat en inventaris.</li>
-    </ul>
-
-    <p>
-      Eerder terugbrengen of later ophalen geeft geen recht op restitutie. Te laat inleveren kan kosten met zich meebrengen.
-    </p>
-  </div>
-
-  <div class="section">
-    <h2>Gebruik van de camper</h2>
-    <ul>
-      <li>Alleen voor recreatief gebruik.</li>
-      <li>Geen illegale activiteiten of onderverhuur.</li>
-      <li>Roken en huisdieren niet toegestaan.</li>
-      <li>Alleen bestuurders uit contract mogen rijden.</li>
-      <li>Maximaal aantal personen niet overschrijden.</li>
-    </ul>
-  </div>
-
-  <div class="section">
-    <h2>Kilometers en kosten</h2>
-    <ul>
-      <li>Geen kilometerbeperking: je rijdt vrij.</li>
-      <li>Brandstof, boetes en tol zijn voor rekening huurder.</li>
-      <li>Niet aftanken = brandstof + €50,- servicekosten.</li>
-    </ul>
-
-    <p>
-      Boetes of tol die later binnenkomen kunnen alsnog worden doorbelast.
-    </p>
-  </div>
-
-  <div class="section">
-    <h2>Schade en ongeval</h2>
-    <ul>
-      <li>Zorg eerst voor veiligheid.</li>
-      <li>Meld schade zo snel mogelijk.</li>
-      <li>Maak foto’s en noteer gegevens.</li>
-      <li>Vul een schadeformulier in.</li>
-    </ul>
-  </div>
-
-  <div class="section">
-    <h2>Pech en reparaties</h2>
-
-    <p>
-      Ontstaat er onderweg een storing of schade, neem dan altijd eerst contact met ons op.
-    </p>
-
-    <ul>
-      <li>Reparaties alleen in overleg.</li>
-      <li>Kleine reparaties tot €50 toegestaan.</li>
-      <li>Grotere kosten alleen na toestemming.</li>
-      <li>Gebruik hulpdienst via groene kaart indien nodig.</li>
-      <li>Verkeerd gebruik (zoals verkeerde brandstof) is voor rekening huurder.</li>
-    </ul>
-
-    <p>
-      Wij zijn niet aansprakelijk voor gevolgschade, reisonderbreking of verlies van eigendommen.
-    </p>
-  </div>
-
-  <div class="section">
-    <h2>Reservering en betaling</h2>
-    <ul>
-      <li>Aanbetaling: €500,- bij reservering.</li>
-      <li>Restbetaling: uiterlijk 1 week voor vertrek.</li>
-      <li>Borg vooraf te voldoen.</li>
-    </ul>
-  </div>
-
-  <div class="section">
-    <h2>Annulering</h2>
-    <ul>
-      <li>Meer dan 8 weken: 25%</li>
-      <li>8–4 weken: 60%</li>
-      <li>4–2 weken: 80%</li>
-      <li>Binnen 2 weken: 100%</li>
-    </ul>
-  </div>
-
-  <div class="section">
-    <h2>Aansprakelijkheid</h2>
-    <ul>
-      <li>Huurder is verantwoordelijk voor camper en inventaris.</li>
-      <li>Niet-verzekerde schade is voor rekening huurder.</li>
-      <li>Persoonlijke eigendommen zijn eigen risico.</li>
-    </ul>
-
-    <div class="note">
-      Gebruik de camper alsof het uw eigendom is.
-    </div>
-  </div>
-
-  <div class="section">
-    <h2>Slotbepalingen</h2>
-    <p>
-      Op deze overeenkomst is Nederlands recht van toepassing. Door gebruik van de camper ga je akkoord met deze voorwaarden.
-    </p>
-  </div>
-
-</div>
+</body>
+</html>
