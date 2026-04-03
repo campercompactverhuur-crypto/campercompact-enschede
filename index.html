@@ -500,10 +500,12 @@
   font-size:14px;
   letter-spacing:0.5px;
 }
-      .photo-gallery{
-        grid-template-columns:1fr 1fr;
-      }
-    }
+
+@media (max-width:640px){
+  .photo-gallery{
+    grid-template-columns:1fr 1fr;
+  }
+}
   </style>
 </head>
 <body>
@@ -566,7 +568,7 @@
           </div>
 
           <div class="photo-card">
-            <div class="photo" style="background:url('front.jpeg') center/cover no-repeat;"></div>
+            <div class="photo" style="background:url('./front.jpeg') center/cover no-repeat;"></div>
           </div>
 
           <div style="margin-top:18px;">
@@ -584,18 +586,17 @@
             Bekijk foto's
           </button>
 
-          <div id="gallery" class="photo-gallery hidden">
-            <img src="front.jpeg" alt="Voorkant camper">
-            <img src="back.jpeg" alt="Achterkant camper">
-            <img src="inside01.jpeg" alt="Binnenkant camper 1">
-            <img src="inside02.jpeg" alt="Binnenkant camper 2">
-            <img src="inside03.jpeg" alt="Binnenkant camper 3">
-            <img src="bathroom.jpeg" alt="Badkamer camper">
-            <img src="kitchen.jpeg" alt="Keuken camper">
-            <img src="garage.jpeg" alt="Opbergruimte camper">
-            <img src="indeling.jpeg" alt="Indeling Camper">
-          </div>
-
+<div id="gallery" class="photo-gallery hidden">
+  <img src="./front.jpeg" alt="Voorkant camper">
+  <img src="./back.jpeg" alt="Achterkant camper">
+  <img src="./inside01.jpeg" alt="Binnenkant camper 1">
+  <img src="./inside02.jpeg" alt="Binnenkant camper 2">
+  <img src="./inside03.jpeg" alt="Binnenkant camper 3">
+  <img src="./bathroom.jpeg" alt="Badkamer camper">
+  <img src="./kitchen.jpeg" alt="Keuken camper">
+  <img src="./garage.jpeg" alt="Opbergruimte camper">
+  <img src="./indeling.jpeg" alt="Indeling camper">
+</div>
           <span class="eyebrow">Over de camper</span>
           <p class="lead">
             Vanaf €119,- per dag - seizoensafhankelijk • Volledig uitgerust • Direct klaar voor vertrek
@@ -680,214 +681,29 @@
 
   <script>
 
-    function getData(){
-      try {
-        return JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
-      } catch {
-        return {};
-      }
-    }
-
-    function setData(data){
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
-    }
-
-    function keyFor(year, month, day){
-      return year + "-" + String(month + 1).padStart(2, "0") + "-" + String(day).padStart(2, "0");
-    }
-
-    function monthName(date){
-      return date.toLocaleDateString("nl-NL", { month:"long", year:"numeric" });
-    }
-
-    function addWeekdays(target){
-      target.innerHTML = "";
-      weekdays.forEach(d => {
-        const el = document.createElement("div");
-        el.className = "weekday";
-        el.textContent = d;
-        target.appendChild(el);
-      });
-    }
-
-    function statusLabel(status){
-      if(status === "unavailable") return "Gereserveerd";
-      return "Beschikbaar";
-    }
-
-    function makeDay(day, status, clickable, onClick){
-      const el = document.createElement(clickable ? "button" : "div");
-      if(clickable) el.type = "button";
-      el.className = "day " + (status === "unavailable" ? "unavailable" : "available");
-
-      const num = document.createElement("div");
-      num.className = "day-num";
-      num.textContent = day;
-
-      const label = document.createElement("div");
-      label.className = "day-label";
-      label.textContent = statusLabel(status);
-
-      el.appendChild(num);
-      el.appendChild(label);
-
-      if(clickable && onClick) el.addEventListener("click", onClick);
-      return el;
-    }
-
-    function renderCalendar(gridEl, labelEl, currentDate, clickable){
-      const data = getData();
-      const year = currentDate.getFullYear();
-      const month = currentDate.getMonth();
-      const first = new Date(year, month, 1);
-      const last = new Date(year, month + 1, 0);
-      const firstWeekday = (first.getDay() + 6) % 7;
-
-      labelEl.textContent = monthName(currentDate);
-      gridEl.innerHTML = "";
-
-      for(let i = 0; i < firstWeekday; i++){
-        const empty = document.createElement("div");
-        empty.className = "day empty";
-        gridEl.appendChild(empty);
-      }
-
-      for(let day = 1; day <= last.getDate(); day++){
-        const key = keyFor(year, month, day);
-        const status = data[key];
-        const cell = makeDay(day, status, clickable, () => {
-          const latest = getData();
-          if(latest[key] === "unavailable") {
-            delete latest[key];
-          } else {
-            latest[key] = "unavailable";
-          }
-          setData(latest);
-          renderAll();
-        });
-        gridEl.appendChild(cell);
-      }
-    }
-
-    const publicView = document.getElementById("publicView");
-    const adminView = document.getElementById("adminView");
-    const loginCard = document.getElementById("loginCard");
-    const adminPanel = document.getElementById("adminPanel");
-    const loginForm = document.getElementById("loginForm");
-    const pinInput = document.getElementById("pinInput");
-    const admWeekdays = document.getElementById("admWeekdays");
-    const admGrid = document.getElementById("admGrid");
-    const admMonthLabel = document.getElementById("admMonthLabel");
-    const menuDropdown = document.getElementById("menuDropdown");
-
-    let admDate = new Date();
-    admDate.setDate(1);
-
-    function renderAll(){
-      if(!admWeekdays.innerHTML) addWeekdays(admWeekdays);
-      renderCalendar(admGrid, admMonthLabel, admDate, true);
-    }
-
-    function route(){
-      const isAdmin = location.hash === "#admin";
-      publicView.classList.toggle("hidden", isAdmin);
-      adminView.classList.toggle("hidden", !isAdmin);
-
-      if(isAdmin){
-        adminPanel.classList.add("hidden");
-        loginCard.classList.remove("hidden");
-      }
-    }
-
-    function toggleGallery(){
-      const gallery = document.getElementById("gallery");
-      gallery.classList.toggle("hidden");
-    }
-
-    function toonTelefoonnummer(){
-      const telefoonnummerLink = document.getElementById("telefoonnummerLink");
-      telefoonnummerLink.classList.remove("hidden");
-    }
-
-    function toggleMenu(){
+ function toggleMenu(){
+    if (menuDropdown) {
       menuDropdown.classList.toggle("show");
     }
+  }
 
-    document.getElementById("admPrev").addEventListener("click", () => {
-      admDate = new Date(admDate.getFullYear(), admDate.getMonth() - 1, 1);
-      renderAll();
-    });
+  document.addEventListener("click", function(e){
+    const menuWrap = document.querySelector(".menu-wrap");
+    if(menuWrap && !menuWrap.contains(e.target) && menuDropdown){
+      menuDropdown.classList.remove("show");
+    }
+  });
 
-    document.getElementById("admNext").addEventListener("click", () => {
-      admDate = new Date(admDate.getFullYear(), admDate.getMonth() + 1, 1);
-      renderAll();
-    });
+  document.addEventListener("keydown", function(e){
+    if(e.key === "Escape" && menuDropdown){
+      menuDropdown.classList.remove("show");
+    }
+  });
 
-    loginForm.addEventListener("submit", (e) => {
-      e.preventDefault();
-      if(pinInput.value === ADMIN_PIN){
-        loginCard.classList.add("hidden");
-        adminPanel.classList.remove("hidden");
-        renderAll();
-      } else {
-        alert("Onjuiste beheercode.");
-      }
-    });
-
-    document.getElementById("logoutBtn").addEventListener("click", () => {
-      pinInput.value = "";
-      adminPanel.classList.add("hidden");
-      loginCard.classList.remove("hidden");
-    });
-
-    document.getElementById("exportBtn").addEventListener("click", () => {
-      const data = getData();
-      const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement("a");
-      a.href = url;
-      a.download = "camperhuren-twente-backup.json";
-      a.click();
-      URL.revokeObjectURL(url);
-    });
-
-    document.getElementById("importInput").addEventListener("change", async (e) => {
-      const file = e.target.files && e.target.files[0];
-      if(!file) return;
-
-      try{
-        const text = await file.text();
-        const data = JSON.parse(text);
-        setData(data);
-        renderAll();
-        alert("Backup geïmporteerd.");
-      } catch {
-        alert("Dit bestand kon niet worden ingelezen.");
-      }
-    });
-
-    document.addEventListener("click", function(e){
-      const menuWrap = document.querySelector(".menu-wrap");
-      if(menuWrap && !menuWrap.contains(e.target)){
-        menuDropdown.classList.remove("show");
-      }
-    });
-
-    document.addEventListener("keydown", function(e){
-      if(e.key === "Escape"){
-        menuDropdown.classList.remove("show");
-      }
-    });
-
-    document.getElementById("year").textContent = new Date().getFullYear();
-    addWeekdays(admWeekdays);
-    renderAll();
-    route();
-    window.addEventListener("hashchange", route);
-  </script>
-la
-  <a
-    class="floating-whatsapp"
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+<a
+  class="floating-whatsapp"
     href="https://wa.me/31613937123?text=Hallo!%20Ik%20heb%20interesse%20in%20de%20Adria%20Compact.%20Kunt%20u%20meer%20informatie%20geven?"
     aria-label="WhatsApp ons"
     title="WhatsApp ons"
