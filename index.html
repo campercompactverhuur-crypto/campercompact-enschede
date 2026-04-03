@@ -650,11 +650,11 @@
   <img src="./garage.jpeg" alt="Opbergruimte camper" onclick="openLightbox(7)">
   <img src="./indeling.jpeg" alt="Indeling camper" onclick="openLightbox(8)">
 </div>
-<div id="lightbox" class="lightbox hidden">
-  <button class="lightbox-close" onclick="closeLightbox()">×</button>
-  <button class="lightbox-nav lightbox-prev" onclick="changeSlide(-1)">‹</button>
-  <img id="lightboxImage" class="lightbox-image" src="" alt="">
-  <button class="lightbox-nav lightbox-next" onclick="changeSlide(1)">›</button>
+<div id="lightbox" class="lightbox hidden" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="event.stopPropagation(); closeLightbox()">×</button>
+  <button class="lightbox-nav lightbox-prev" onclick="event.stopPropagation(); changeSlide(-1)">‹</button>
+  <img id="lightboxImage" class="lightbox-image" src="" alt="" onclick="event.stopPropagation()">
+  <button class="lightbox-nav lightbox-next" onclick="event.stopPropagation(); changeSlide(1)">›</button>
 </div>
           <span class="eyebrow">Over de camper</span>
           <p class="lead">
@@ -741,6 +741,20 @@
 <script>
   const menuDropdown = document.getElementById("menuDropdown");
 
+  const galleryImages = [
+    { src: "./front.jpeg", alt: "Voorkant camper" },
+    { src: "./back.jpeg", alt: "Achterkant camper" },
+    { src: "./inside01.jpeg", alt: "Binnenkant camper 1" },
+    { src: "./inside02.jpeg", alt: "Binnenkant camper 2" },
+    { src: "./inside03.jpeg", alt: "Binnenkant camper 3" },
+    { src: "./bathroom.jpeg", alt: "Badkamer camper" },
+    { src: "./kitchen.jpeg", alt: "Keuken camper" },
+    { src: "./garage.jpeg", alt: "Opbergruimte camper" },
+    { src: "./Indeling.jpg", alt: "Indeling camper" }
+  ];
+
+  let currentImageIndex = 0;
+
   function toggleGallery() {
     const gallery = document.getElementById("gallery");
     if (gallery) {
@@ -761,6 +775,44 @@
     }
   }
 
+  function openLightbox(index) {
+    currentImageIndex = index;
+
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImage = document.getElementById("lightboxImage");
+
+    if (lightbox && lightboxImage) {
+      lightboxImage.src = galleryImages[index].src;
+      lightboxImage.alt = galleryImages[index].alt;
+      lightbox.classList.remove("hidden");
+    }
+  }
+
+  function closeLightbox() {
+    const lightbox = document.getElementById("lightbox");
+    if (lightbox) {
+      lightbox.classList.add("hidden");
+    }
+  }
+
+  function changeSlide(direction) {
+    currentImageIndex += direction;
+
+    if (currentImageIndex < 0) {
+      currentImageIndex = galleryImages.length - 1;
+    }
+
+    if (currentImageIndex >= galleryImages.length) {
+      currentImageIndex = 0;
+    }
+
+    const lightboxImage = document.getElementById("lightboxImage");
+    if (lightboxImage) {
+      lightboxImage.src = galleryImages[currentImageIndex].src;
+      lightboxImage.alt = galleryImages[currentImageIndex].alt;
+    }
+  }
+
   document.addEventListener("click", function(e) {
     const menuWrap = document.querySelector(".menu-wrap");
     if (menuWrap && !menuWrap.contains(e.target) && menuDropdown) {
@@ -769,8 +821,23 @@
   });
 
   document.addEventListener("keydown", function(e) {
-    if (e.key === "Escape" && menuDropdown) {
-      menuDropdown.classList.remove("show");
+    if (e.key === "Escape") {
+      if (menuDropdown) {
+        menuDropdown.classList.remove("show");
+      }
+      closeLightbox();
+    }
+
+    const lightbox = document.getElementById("lightbox");
+
+    if (lightbox && !lightbox.classList.contains("hidden")) {
+      if (e.key === "ArrowLeft") {
+        changeSlide(-1);
+      }
+
+      if (e.key === "ArrowRight") {
+        changeSlide(1);
+      }
     }
   });
 
