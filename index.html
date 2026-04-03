@@ -679,28 +679,46 @@
   </div>
 
 
-  <script>
+<script>
+  const menuDropdown = document.getElementById("menuDropdown");
 
- function toggleMenu(){
+  function toggleGallery() {
+    const gallery = document.getElementById("gallery");
+    if (gallery) {
+      gallery.classList.toggle("hidden");
+    }
+  }
+
+  function toonTelefoonnummer() {
+    const telefoonnummerLink = document.getElementById("telefoonnummerLink");
+    if (telefoonnummerLink) {
+      telefoonnummerLink.classList.remove("hidden");
+    }
+  }
+
+  function toggleMenu() {
     if (menuDropdown) {
       menuDropdown.classList.toggle("show");
     }
   }
 
-  document.addEventListener("click", function(e){
+  document.addEventListener("click", function(e) {
     const menuWrap = document.querySelector(".menu-wrap");
-    if(menuWrap && !menuWrap.contains(e.target) && menuDropdown){
+    if (menuWrap && !menuWrap.contains(e.target) && menuDropdown) {
       menuDropdown.classList.remove("show");
     }
   });
 
-  document.addEventListener("keydown", function(e){
-    if(e.key === "Escape" && menuDropdown){
+  document.addEventListener("keydown", function(e) {
+    if (e.key === "Escape" && menuDropdown) {
       menuDropdown.classList.remove("show");
     }
   });
 
-  document.getElementById("year").textContent = new Date().getFullYear();
+  const yearElement = document.getElementById("year");
+  if (yearElement) {
+    yearElement.textContent = new Date().getFullYear();
+  }
 </script>
 <a
   class="floating-whatsapp"
