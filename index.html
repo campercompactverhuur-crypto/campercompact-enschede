@@ -591,19 +591,48 @@
         grid-template-columns:1fr 1fr;
       }
     }
+.brand-mark{
+  width:44px;
+  height:44px;
+  border-radius:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  font-weight:700;
+  color:white;
+  background:rgba(255,255,255,0.1);
+  border:1px solid rgba(255,255,255,0.2);
+}
+
+.brand-mark .j{
+  position:absolute;
+  top:10px;
+  font-size:16px;
+}
+
+.brand-mark .l{
+  position:absolute;
+  top:18px;
+  font-size:16px;
+}
   </style>
 </head>
 <body>
   <div id="publicView">
     <header class="site-header">
       <div class="container nav">
-        <div class="brand">
-          <div>
-<div class="brand-title">Camperhuren Twente</div>
-<div class="brand-sub">Enschede & Twente</div>
-          </div>
-        </div>
+<div class="brand">
+  <div class="brand-mark">
+    <span class="j">J</span>
+    <span class="l">L</span>
+  </div>
 
+  <div>
+    <div class="brand-title">Camperhuren Twente</div>
+    <div class="brand-sub">Enschede & Twente</div>
+  </div>
+</div>
         <div class="menu-wrap">
           <button class="menu-toggle" type="button" onclick="toggleMenu()" aria-label="Menu openen">
             ☰
