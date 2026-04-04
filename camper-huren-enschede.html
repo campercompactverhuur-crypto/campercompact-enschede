@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Camper huren in Enschede | Camperhuren Twente</title>
+  <meta name="description" content="Camper huren in Enschede? Huur onze complete Adria Compact camper via Camperhuren Twente. Bekijk foto's, beschikbaarheid en praktische informatie." />
+  <style>
+    :root{
+      --bg:#fffaf2;
+      --bg2:#f7efe1;
+      --line:rgba(0,0,0,.08);
+      --text:#2b2b2b;
+      --muted:#7a736b;
+      --green:#f4b860;
+      --green2:#e39d3c;
+      --shadow:0 12px 30px rgba(0,0,0,.08);
+      --radius:22px;
+    }
+
+    *{box-sizing:border-box}
+
+    body{
+      margin:0;
+      font-family:Arial, Helvetica, sans-serif;
+      color:var(--text);
+      background:var(--bg);
+      line-height:1.6;
+    }
+
+    a{text-decoration:none;color:inherit}
+
+    .container{
+      width:min(1000px, calc(100% - 32px));
+      margin:0 auto;
+    }
+
+    .site-header{
+      position:sticky;
+      top:0;
+      z-index:20;
+      background:rgba(8,12,10,.72);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid var(--line);
+    }
+
+    .nav{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:16px;
+      padding:14px 0;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+
+    .brand-mark{
+      width:46px;
+      height:46px;
+      border-radius:14px;
+      display:grid;
+      place-items:center;
+      font-weight:700;
+      color:#082114;
+      background:linear-gradient(135deg,var(--green),var(--green2));
+      box-shadow:var(--shadow);
+    }
+
+    .brand-title{
+      font-weight:700;
+      color:white;
+    }
+
+    .brand-sub{
+      font-size:13px;
+      color:#d6d0c8;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
+    .nav-links a{
+      padding:10px 14px;
+      border-radius:12px;
+      background:rgba(255,255,255,.08);
+      color:white;
+    }
+
+    .hero{
+      padding:56px 0 24px;
+    }
+
+    .eyebrow{
+      display:inline-block;
+      margin-bottom:12px;
+      color:#b9812f;
+      font-size:12px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      font-weight:700;
+    }
+
+    h1,h2,h3,p{
+      margin-top:0;
+    }
+
+    h1{
+      font-size:clamp(36px, 6vw, 58px);
+      line-height:1.02;
+      letter-spacing:-.04em;
+      margin-bottom:16px;
+    }
+
+    h2{
+      font-size:clamp(28px,4vw,40px);
+      letter-spacing:-.03em;
+      margin-bottom:12px;
+    }
+
+    .lead{
+      font-size:18px;
+      color:var(--muted);
+      max-width:780px;
+    }
+
+    .hero-actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin:24px 0 20px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:12px 18px;
+      border-radius:14px;
+      border:1px solid transparent;
+      font-weight:700;
+      cursor:pointer;
+      background:linear-gradient(135deg,var(--green),var(--green2));
+      color:#082114;
+    }
+
+    .btn-secondary{
+      background:white;
+      border-color:var(--line);
+      color:var(--text);
+    }
+
+    .photo-card,.info-card,.contact-box{
+      border-radius:var(--radius);
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.85);
+      box-shadow:var(--shadow);
+    }
+
+    .photo-card{
+      padding:16px;
+      margin-top:10px;
+    }
+
+    .photo{
+      min-height:460px;
+      border-radius:18px;
+      background:url('./front.jpeg') center/cover no-repeat;
+    }
+
+    .section{
+      padding:34px 0;
+    }
+
+    .section-muted{
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+      background:rgba(255,255,255,.35);
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:18px;
+    }
+
+    .info-card{
+      padding:24px;
+    }
+
+    .info-card p{
+      color:var(--muted);
+    }
+
+    .contact-box{
+      padding:24px;
+      margin-top:12px;
+    }
+
+    .footer{
+      padding:24px 0 34px;
+      color:var(--muted);
+    }
+
+    @media (max-width:900px){
+      .cards{
+        grid-template-columns:1fr;
+      }
+
+      .nav{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+
+      .photo{
+        min-height:300px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <div class="brand">
+        <div class="brand-mark">CT</div>
+        <div>
+          <div class="brand-title">Camperhuren Twente</div>
+          <div class="brand-sub">Particuliere camperverhuur in Enschede en Twente</div>
+        </div>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="prijzen.html">Prijzen</a>
+        <a href="praktisch.html">Praktisch</a>
+        <a href="voorwaarden.html">Huurvoorwaarden</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <span class="eyebrow">Camper huren · Enschede · Twente</span>
+        <h1>Camper huren in Enschede</h1>
+        <p class="lead">
+          Wil je een camper huren in Enschede? Bij Camperhuren Twente huur je onze complete en comfortabele Adria Compact. Vanuit Enschede vertrek je eenvoudig voor een ontspannen vakantie in Nederland of Europa. Op deze pagina lees je meer over onze camper, de mogelijkheden en hoe je contact met ons kunt opnemen.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn" href="index.html#beschikbaarheid">Bekijk beschikbaarheid</a>
+          <a class="btn btn-secondary" href="mailto:camperhurentwente@gmail.com?subject=Camper huren Enschede&body=Hallo,%0A%0AIk heb interesse in jullie camper.%0A%0A- Gewenste periode:%0A- Aantal personen:%0A%0AAlvast bedankt!">Stuur e-mail</a>
+        </div>
+
+        <div class="photo-card">
+          <div class="photo" aria-label="Adria Compact camper van Camperhuren Twente in Enschede"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>Waarom een camper huren in Enschede?</h2>
+        <p class="lead">
+          Enschede is een fijne uitvalsbasis voor een campervakantie. Vanuit deze regio rijd je gemakkelijk richting de Veluwe, Drenthe, Duitsland of verder Europa in. Wie een camper wil huren in Enschede zoekt vaak gemak, vrijheid en comfort. Precies dat vind je bij onze compacte Adria Compact.
+        </p>
+
+        <div class="cards">
+          <article class="info-card">
+            <h3>Compact en comfortabel</h3>
+            <p>Onze camper is geschikt voor 2 personen en eventueel voor 1 extra kind. Door het compacte formaat rijdt en parkeert de camper prettig, zonder in te leveren op comfort.</p>
+          </article>
+
+          <article class="info-card">
+            <h3>Volledig uitgerust</h3>
+            <p>De camper is voorzien van een complete inventaris. Veel praktische spullen zijn al aanwezig, zodat je zelf weinig hoeft mee te nemen en snel op pad kunt.</p>
+          </article>
+
+          <article class="info-card">
+            <h3>Persoonlijk contact</h3>
+            <p>Wij zijn particuliere verhuurders uit de regio Enschede en helpen je graag persoonlijk met vragen over beschikbaarheid, prijzen en het gebruik van de camper.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-muted">
+      <div class="container">
+        <h2>Onze Adria Compact camper</h2>
+        <p class="lead">
+          Onze Adria Compact is een nette, moderne en praktische camper voor een comfortabele reis. De camper beschikt over een complete inventaris en extra voorzieningen zoals een luifel, zonnepaneel, keukeninventaris, buitenmeubilair en handige opbergruimte. Daarmee is deze camper zeer geschikt voor stellen of kleine gezinnen die vanuit Enschede een camper willen huren.
+        </p>
+
+        <div class="cards">
+          <article class="info-card">
+            <h3>Fijn rijgedrag</h3>
+            <p>Door het compacte model is de camper wendbaar en overzichtelijk. Dat maakt rijden ontspannen, ook voor mensen die niet dagelijks in een grote auto rijden.</p>
+          </article>
+
+          <article class="info-card">
+            <h3>Praktisch ingericht</h3>
+            <p>In de camper vind je alles wat je nodig hebt voor onderweg en op de camping. Denk aan keukeninventaris, zitruimte, slaapruimte en handige extra’s.</p>
+          </article>
+
+          <article class="info-card">
+            <h3>Vertrekken vanuit Twente</h3>
+            <p>Voor wie een camper wil huren in Enschede of Twente is dit een praktische locatie om je reis te starten, met snelle verbindingen richting binnen- en buitenland.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>Camper huren in Enschede? Neem contact op</h2>
+        <p class="lead">
+          Wil je weten of onze camper beschikbaar is in jouw gewenste periode? Op de homepage kun je direct de beschikbaarheid bekijken. Heb je vragen of wil je een aanvraag doen, neem dan gerust contact met ons op via e-mail, telefoon of WhatsApp.
+        </p>
+
+        <div class="contact-box">
+          <p>
+            <strong>Camperhuren Twente</strong><br>
+            Particuliere camperverhuur in Enschede en Twente<br>
+            E-mail: camperhurentwente@gmail.com<br>
+            Telefoon: 06 13 93 71 23
+          </p>
+
+          <p>
+            <a class="btn" href="index.html#beschikbaarheid">Ga naar beschikbaarheid</a>
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      © <span id="year"></span> Camperhuren Twente
+    </div>
+  </footer>
+
+  <script>
+    const yearElement = document.getElementById("year");
+    if (yearElement) {
+      yearElement.textContent = new Date().getFullYear();
+    }
+  </script>
+</body>
+</html>
