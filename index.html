@@ -713,7 +713,7 @@ h3 {
           </div>
 
           <div class="photo-card">
-            <div class="photo" style="background:url('./01_voorkant.jpeg') center/cover no-repeat;"></div>
+            <div class="photo" style="background:url('./01voorkant.jpg') center/cover no-repeat;"></div>
           </div>
 
           <div style="margin-top:16px;">
@@ -730,18 +730,24 @@ h3 {
   <div class="container">
 
 <div id="gallery" class="photo-gallery">
-  <img src="./01_voorkant.jpeg" alt="Voorkant van de Adria Compact camper in Twente" onclick="openLightbox(0)">
-  <img src="./02_achterkant.jpeg" alt="Achterkant van de Adria Compact camper" onclick="openLightbox(1)">
-  <img src="./03_cabine_01.jpeg" alt="Binnenkant van de camper 01" onclick="openLightbox(2)">
-  <img src="./04_cabine_02.jpeg" alt="Binnenkant van de camper 02" onclick="openLightbox(3)">
-  <img src="./05_cabine_03.jpeg" alt="Binnenkant van de camper 03" onclick="openLightbox(4)">
-  <img src="./06_bedden.jpeg" alt="Bedden in de camper" onclick="openLightbox(5)">
-  <img src="./07_badkamer_01.jpeg" alt="Badkamer 01" onclick="openLightbox(6)">
-  <img src="./08_badkamer_02.jpeg" alt="Badkamer 02" onclick="openLightbox(7)">
-  <img src="./09_garage.jpeg" alt="Garage van de camper" onclick="openLightbox(8)">
-  <img src="./10_keukentje.jpeg" alt="Keukentje van de camper" onclick="openLightbox(9)">
-  <img src="./11_navi.jpeg" alt="Navigatie van de camper" onclick="openLightbox(10)">
-  <img src="./Indeling.jpg" alt="Indeling van de camper" onclick="openLightbox(11)">
+  <img src="./02achterkant.jpg" alt="Achterkant van de Adria Compact camper in Twente" onclick="openLightbox(0)">
+  <img src="./03zijkant.jpg" alt="Zijkant van de Adria Compact camper" onclick="openLightbox(1)">
+  <img src="./04closeup.jpg" alt="Binnenkant van de camper" onclick="openLightbox(2)">
+  <img src="./05sfeer.jpg" alt="Sfeerfoto van de camper" onclick="openLightbox(3)">
+  <img src="./06voorin.jpg" alt="Binnen voorkant van de camper" onclick="openLightbox(5)">
+  <img src="./07voorin2.jpg" alt="Binnen voorkant van de camper 2" onclick="openLightbox(6)">
+  <img src="./08keuken1.jpg" alt="Keuken" onclick="openLightbox(7)">
+  <img src="./09keuken2.jpg" alt="Keuken 2" onclick="openLightbox(7)">
+  <img src="./10keuken3.jpg" alt="Keuken 3" onclick="openLightbox(7)">
+  <img src="./11bedden.jpg" alt="Bedden compilatie" onclick="openLightbox(7)">
+  <img src="./12toilet.jpg" alt="Toiletruimte" onclick="openLightbox(7)">
+  <img src="./13douche.jpg" alt="Doucheruimte" onclick="openLightbox(7)">
+  <img src="./14garage.jpg" alt="Garage van de camper" onclick="openLightbox(8)">
+  <img src="./15garage2.jpg" alt="Garage van de camper2" onclick="openLightbox(9)">
+  <img src="./16dashboard.jpg" alt="Dashboard van de camper" onclick="openLightbox(10)">
+  <img src="./17navi.jpg" alt="Navigatie van de camper" onclick="openLightbox(10)">
+  <img src="./18indeling.jpg" alt="Indeling van de camper" onclick="openLightbox(10)">
+  <img src="./19laatste.jpg" alt="Overzicht van de camper" onclick="openLightbox(10)">
 </div>
 
           <div id="lightbox" class="lightbox hidden" onclick="closeLightbox()">
@@ -854,18 +860,24 @@ Zo vertrek je snel én geniet je zorgeloos van je reis.
   const menuDropdown = document.getElementById("menuDropdown");
 
   const galleryImages = [
-    { src: "./01_voorkant.jpeg", alt: "Voorkant van de Adria Compact camper in Twente" },
-    { src: "./02_achterkant.jpeg", alt: "Achterkant van de Adria Compact camper" },
-    { src: "./03_cabine_01.jpeg", alt: "Binnenkant van de camper 01" },
-    { src: "./04_cabine_02.jpeg", alt: "Binnenkant van de camper 02" },
-    { src: "./05_cabine_03.jpeg", alt: "Binnenkant van de camper 03" },
-    { src: "./06_bedden.jpeg", alt: "Bedden in de camper" },
-    { src: "./07_badkamer_01.jpeg", alt: "Badkamer 01" },
-    { src: "./08_badkamer_02.jpeg", alt: "Badkamer 02" },
-    { src: "./09_garage.jpeg", alt: "Garage van de camper" },
-    { src: "./10_keukentje.jpeg", alt: "Keukentje van de camper" },
-    { src: "./11_navi.jpeg", alt: "Navigatie van de camper" },
-    { src: "./Indeling.jpg", alt: "Indeling van de camper" }
+    { src: "./02ahterkant.jpg", alt: "Voorkant van de Adria Compact camper in Twente" },
+    { src: "./03zijkant.jpg", alt: "zijkant van de Adria Compact camper" },
+    { src: "./04closeup.jpg", alt: "Close-up van de Adria Compact camper" },
+    { src: "./05sfeer.jpg", alt: "Sfeerfoto van de Adria Compact camper" },
+    { src: "./06voorin.jpg", alt: "voorin1 van de Adria Compact camper" },
+    { src: "./07voorin2.jpg", alt: "voorin2 van de Adria Compact camper" },
+    { src: "./08keuken1.jpg", alt: "Keuken1 van de Adria Compact camper" },
+    { src: "./09keuken2.jpg", alt: "Keuken2 van de Adria Compact camper" },
+    { src: "./10keuken3.jpg", alt: "Keuken3 van de Adria Compact camper" },
+    { src: "./11bedden.jpg", alt: "Bedden compilatie van de Adria Compact camper" },
+    { src: "./12toilet.jpg", alt: "toilet van de Adria Compact camper" },
+    { src: "./13douche.jpg", alt: "douche van de Adria Compact camper" },
+    { src: "./14garage.jpg", alt: "garage1 van de Adria Compact camper" },
+    { src: "./15garage2.jpg", alt: "garage2 van de Adria Compact camper" },
+    { src: "./16dashboard.jpg", alt: "dashboard van de Adria Compact camper" },
+    { src: "./17navi.jpg", alt: "navi van de Adria Compact camper" },
+    { src: "./18indeling.jpg", alt: "indeling van de Adria Compact camper" },
+    { src: "./19laatste.jpg", alt: "overzicht van de Adria Compact camper" },
   ];
 
   let currentImageIndex = 0;
