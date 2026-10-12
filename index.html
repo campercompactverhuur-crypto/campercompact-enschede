@@ -673,6 +673,32 @@ details summary {
     color: #f4b400;
     margin-bottom: 6px;
 }
+
+
+.review-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  align-items: stretch;
+}
+
+.review-cards .info-card {
+  min-width: 0;
+}
+
+@media (max-width: 900px) {
+  .review-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .review-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+
   </style>
 </head>
 <body>
@@ -838,10 +864,10 @@ Zo vertrek je snel én geniet je zorgeloos van je reis.
 <section class="section section-muted">
   <div class="container">
 
-```html
+
 <h2>Ervaringen van huurders</h2>
 
-<div class="cards">
+<div class="cards review-cards">
 
   <article class="info-card">
 
@@ -893,6 +919,65 @@ Zo vertrek je snel én geniet je zorgeloos van je reis.
 
       <p>
         We hebben een hele leuke vakantie gehad en raden deze camper echt aan.
+      </p>
+    </details>
+
+  </article>
+
+
+  <article class="info-card">
+
+    <h3>⭐⭐⭐⭐⭐</h3>
+    <p>G&L • september 2026</p>
+
+    <p>
+      Wat hebben we genoten van deze camper! 😊 Compact, maar super compleet en ontzettend slim ingericht.
+      Alles wat je nodig hebt is aan boord en het voelde al snel als ons tweede thuis.
+    </p>
+
+    <details>
+      <summary>Lees meer</summary>
+
+      <p>
+        We hadden een heerlijke korte vakantie in Nederland en vonden het echt súpergaaf
+        om zo te kunnen reizen! 🚐✨
+      </p>
+
+      <p>
+        Volgend jaar boeken we 'm graag weer!
+      </p>
+    </details>
+
+  </article>
+
+
+  <article class="info-card">
+
+    <h3>⭐⭐⭐⭐⭐</h3>
+    <p>M&A • september 2026</p>
+
+    <p>
+      De gehuurde camper was meer dan compleet, we zijn op reis geweest naar Noorwegen
+      en hebben geweldig kunnen genieten door de compleet uitgeruste camper!
+    </p>
+
+    <details>
+      <summary>Lees meer</summary>
+
+      <p>
+        Het contact was erg goed en laagdrempelig. Voor elke vraag konden we bij Johan
+        en Lorette terecht. Ook in Noorwegen was er binnen enkele minuten een reactie.
+        Erg fijn!
+      </p>
+
+      <p>
+        Deze camper was een compact compleet huisje op wielen. Wij bevelen Johan en
+        Lorette aan bij vrienden die een camper zouden willen huren!
+      </p>
+
+      <p>
+        Ook wij zullen bij een volgende campervakantie weer contact leggen met
+        Johan en Lorette.
       </p>
     </details>
 
